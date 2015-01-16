@@ -62,9 +62,9 @@ main = hakyll $ do
     route idRoute
     compile copyFileCompiler
 
-  match "images/*" $ do
-    route idRoute
-    compile copyFileCompiler
+  -- match "images/*" $ do
+  --   route idRoute
+  --   compile copyFileCompiler
 
   match "fonts/*" $ do
     route idRoute
@@ -80,9 +80,9 @@ main = hakyll $ do
       setExtension "html"
     defaultCompile
 
-  match "chapters/*" $ do
-    route $ setExtension "html"
-    defaultCompile
+  -- match "chapters/*" $ do
+  --   route $ setExtension "html"
+  --   defaultCompile
 
   match "templates/*" $ compile templateCompiler
 
