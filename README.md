@@ -17,9 +17,8 @@ help` to see all of the options.
 
 # LYSA
 
-The subject of this site is
-[Learn You Some Algebras for Glorious Good!](https://gitlab.com/groups/lysa), a
-math textbook I'm writing with a number of other people.
+The subject of this site is [Learn You Some Algebras for Glorious Good!][lysa],
+a math textbook I'm writing with a number of other people.
 
 # Contact
 
@@ -32,3 +31,4 @@ experience.
 [pdmd]: http://johnmacfarlane.net/pandoc/demo/example9/pandocs-markdown.html
 [hak]: http://jaspervdj.be/hakyll/
 [hask]: https://github.com/bitemyapp/learnhaskell#getting-started
+[lysa]: https://gitlab.com/groups/lysa
