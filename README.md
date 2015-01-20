@@ -3,12 +3,6 @@ This is the source for http://learnyou.org/ . It's written mostly in
 file. `site/main.hs` uses a Haskell library called [Hakyll][hak]. If you're
 familiar with Ruby's Jekyll, or Python's Hyde, Hakyll is the Haskell analog.
 
-The current maintainer is me, Peter Harpending. I'm looking for a new
-maintainer, hopefully one who can make the site into an actual website with a
-blog and stuff. Currently it's entirely static. I'm not willing to make a whole
-website. I'm instead focusing my efforts on [LYSA][lysa], the subject of the
-website.
-
 # Compiling
 
 You'll need to [install Haskell][hask]. From there you can run `cabal install
@@ -20,7 +14,18 @@ help` to see all of the options.
 The subject of this site is [Learn You Some Algebras for Glorious Good!][lysa],
 a math textbook I'm writing with a number of other people.
 
-# Contact
+# Maintainer
+
+The current maintainer is me, Peter Harpending. I'm looking for a new
+maintainer, hopefully one who can make the site into an actual website with a
+blog and stuff. Currently it's entirely static. I'm not willing to make a whole
+website. I'm instead focusing my efforts on [LYSA][lysa], the subject of the
+website.
+
+I also need a sysadmin for the server. The sysadmin can be the same person as
+the web developer if need be.
+
+## Contact
 
 The best way to contact me is through the
 [`#lysa` IRC channel on FreeNode](https://webchat.freenode.net/?channels=%23lysa). You
