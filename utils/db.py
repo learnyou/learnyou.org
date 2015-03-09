@@ -1,32 +1,26 @@
 from pymongo import MongoClient, ASCENDING, DESCENDING
 
 
-db_client = MongoClient()
+client = MongoClient()
+db = client.posts
 
+posts = db.posts
+users = db.users
 
-def add_first_user():
-    if not list(users.find()):
-        salt = encodestring(urandom(40))
-        admin_user = {
-            'username': 'Enzo',
-            'salt': salt,
-            'password': hash('SG4jbA2', salt, 1024, 1, 1, 32).encode('hex')
-        }
-        users.insert(admin_user)
+def posts_by_date(lim=0, descending=True):
+    order = DESCENDING if descending else ASCENDING
+    return posts.find().sort('date', order).limit(lim)
 
-# post = {
-#   'title': <str>
-#   'author': <str>
-#   'file': <str>
-#   'content': <text>
-#   'date': <date>
-#   'lang': <str>
-#   'tags': [<str>]
-# }
+def posts_by_author(author, lim=0, descending=True):
+    order = DESCENDING if descending else ASCENDING
+    return posts.find({'author': author}).sort('date', order).limit(lim)
 
-# user = {
-#   'username': <str>
-#   'hashed_password': <hash>
-#   'salt': <str>
-# }
+def posts_by_tag(tag, lim=0, descending=True):
+    order = DESCENDING if descending else ASCENDING
+    return posts.find({'tags': tag}).sort('date', order).limit(lim)
 
+def user(username):
+    return users.find_one({'username': username})
+
+def post(file):
+    return posts.find_one({'file': file})

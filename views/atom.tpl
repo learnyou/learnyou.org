@@ -3,7 +3,13 @@
  
  <title>Learn You Some Algebras!</title>
  <link href="http://learnyou.org/blog"/>
- <updated>{{updated.isoformat().split('.')[0]}}</updated>
+ <updated>
+ % if updated != '':
+    {{updated.isoformat().split('.')[0]}}
+ % else:
+    
+ % end
+ </updated>
  <id>urn:uuid:1b8836d5-298a-49e2-a032-4acb2044c8d3</id>
 
 % for post in articles:

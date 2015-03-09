@@ -5,7 +5,7 @@ import io
 from os import path
 from sys import version as py_ver
 
-from utils.db import db_client, ASCENDING, DESCENDING
+import utils.db as db
 from utils.auth import check
 from utils.markdown2 import markdown
 
@@ -15,8 +15,6 @@ __version__, default_app, route, run, request, redirect, auth_basic)
 from upload import published
 from config import STATIC, MEDIA, CONTENT
 
-db = db_client.posts
-posts = db.posts
 
 @error(404)
 def error_404(error):
@@ -44,8 +42,8 @@ def index():
 
 @route('/blog')
 def blog_index():
-    articles = posts.find().sort('date', DESCENDING)
-    return template('index', content=articles, title=None)
+    posts = db.posts_by_date()
+    return template('index', content=posts, title=None)
 
 
 @route('/static/<file:path>')
@@ -57,7 +55,7 @@ def media(file):
 
 @route('/doc/<file:path>')
 def doc(file):
-    post = posts.find_one({'file': file})
+    post = db.post(file)
     return template('doc', post=post)
 
 @route('/page/<filename>')
@@ -74,22 +72,22 @@ def fetch_page(filename):
 
 @route('/feed')
 def feed():
-    articles = posts.find().sort('date', DESCENDING).limit(10)
-    updated = list(posts.find().sort('date', DESCENDING).limit(1))[0]['date']
+    content = list(db.posts_by_date(10))
+    updated = content[0]['date'] if content else ''
     response.content_type = 'application/atom+xml; charset=utf-8'
-    return template('atom', articles=articles, updated=updated)
+    return template('atom', articles=content, updated=updated)
                      
 @route('/a/<name>')
 def by_author(name):
-    articles = posts.find({'author': name}).sort('date', DESCENDING)
+    content = db.posts_by_author(name)
     title = 'By %s' % name
-    return template('by', content=articles, title=title)
+    return template('by', content=content, title=title)
 
 @route('/t/<tag>')
 def by_tag(tag):
-    articles = posts.find({'tags': tag}).sort('date', DESCENDING)
+    content = db.posts_by_tag(tag)
     title = 'Tagged as "%s"' % tag
-    return template('by', content=articles, title=title)
+    return template('by', content=content, title=title)
 
 @route('/pub')
 @auth_basic(check)

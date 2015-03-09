@@ -2,14 +2,10 @@ from os.path import splitext
 from zipfile import ZipFile
 from datetime import datetime
 
-from utils.db import db_client
+import utils.db as db
 from utils.markdown2 import markdown
 
-
-db = db_client.posts
-posts = db.posts
-
-MEDIA = './media'
+from config import MEDIA
 
 class Err(object):
     def __init__(self, err):
@@ -58,7 +54,7 @@ def store_post(buf, filename):
         'date': datetime.now()
     }
     try:
-        posts.insert(new_post)
+        db.posts.insert(new_post)
     except:
         return Err('Database did not responded')
     else:
