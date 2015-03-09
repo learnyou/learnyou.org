@@ -161,6 +161,8 @@ class MarkdownError(Exception):
 
 #---- public api
 
+lp = [(re.compile(r'((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+(:[0-9]+)?|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)'),r'\1')]
+
 def markdown_path(path, encoding="utf-8",
                   html4tags=False, tab_width=DEFAULT_TAB_WIDTH,
                   safe_mode=None, extras=None, link_patterns=None,
@@ -174,7 +176,7 @@ def markdown_path(path, encoding="utf-8",
                     use_file_vars=use_file_vars).convert(text)
 
 def markdown(text, html4tags=False, tab_width=DEFAULT_TAB_WIDTH,
-             safe_mode=None, extras=None, link_patterns=None,
+             safe_mode=None, extras=['metadata', 'footnotes', 'link-patterns'], link_patterns=lp,
              use_file_vars=False):
     return Markdown(html4tags=html4tags, tab_width=tab_width,
                     safe_mode=safe_mode, extras=extras,

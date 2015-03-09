@@ -42,7 +42,7 @@ def read_upload(f):
 
 def store_post(buf, filename):
     """ Extract metadata of content and stores a new post in DB """
-    html = markdown(buf, extras=['metadata'])
+    html = markdown(buf)
     meta = html.metadata
     new_post = {
         'author': meta.get('author', 'Anonymous'),
