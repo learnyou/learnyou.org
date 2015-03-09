@@ -14,8 +14,7 @@ def check(username, password):
     if user:
         salt = user['salt']
         hpw = scrypt.hash(str(password), salt, 1024, 1, 1, 32).encode('hex')
-        if hpw == user['password']:
-            return True
+        return hpw == user['password']
     else:
         return False
 
