@@ -13,14 +13,10 @@ from bottle import (route, error, abort, static_file, response, template,
 __version__, default_app, route, run, request, redirect, auth_basic)
 
 from upload import published
-
+from config import STATIC, MEDIA, CONTENT
 
 db = db_client.posts
 posts = db.posts
-
-STATIC = './static'
-MEDIA = './media'
-CONTENT = './content'
 
 @error(404)
 def error_404(error):
