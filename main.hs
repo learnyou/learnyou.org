@@ -1,5 +1,7 @@
 #!/usr/bin/env runhaskell
 
+-- -*- hindent-style : "chris-done" -*-
+
 {-# LANGUAGE OverloadedStrings #-}
 
 -- Copyright (C) 2014-2015, Various Contributors.
@@ -27,44 +29,40 @@ import       Hakyll
 import       System.Posix.Resource
 import       Text.Pandoc
 
-sass = getResourceLBS
-  >>= withItemBody (unixFilterLBS "sass" ["--stdin", "--style", "expanded"])
-  >>= return . fmap unpack
+sass =
+  getResourceLBS >>=
+  withItemBody
+    (unixFilterLBS "sass"
+                   ["--stdin","--style","expanded"]) >>=
+  return . fmap unpack
 
 main :: IO ()
-main = hakyll $ do
-  match "LICENSE" $ do
-    route idRoute
-    compile copyFileCompiler
-
-  match "res/*" $ do
-    route idRoute
-    compile copyFileCompiler
-
-  match "res/*/*/*" $ do
-    route idRoute
-    compile copyFileCompiler
-
-  match "images/*" $ do
-    route idRoute
-    compile copyFileCompiler
-
-  match "stylesheets/*" $ do
-    route $ setExtension "css"
-    compile sass
-
-  match "pages/*" $ do
-    route $ 
-      gsubRoute "pages/" (const "") `composeRoutes`
-      setExtension "html"
-    defaultCompile
-
-  match "templates/*" $ compile templateCompiler
+main =
+  hakyll $
+  do match "res/*" $
+       do route idRoute
+          compile copyFileCompiler
+     match "res/*/*/*" $
+       do route idRoute
+          compile copyFileCompiler
+     match "images/*" $
+       do route idRoute
+          compile copyFileCompiler
+     match "stylesheets/*" $
+       do route $
+            setExtension "css"
+          compile sass
+     match "pages/*" route $
+       do gsubRoute "pages/" (const "") `composeRoutes`
+            setExtension "html" defaultCompile
+     match "templates/*" $
+       compile templateCompiler
 
 defaultCompile =
   compile $
-    pandocCompilerWith def
-      (def
-         { writerHTMLMathMethod = MathJax
-                                    "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
-         }) >>= loadAndApplyTemplate "templates/default.html" defaultContext >>= relativizeUrls
+  pandocCompilerWith
+    def
+    (def {writerHTMLMathMethod =
+            MathJax "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"}) >>=
+  loadAndApplyTemplate "templates/default.html" defaultContext >>=
+  relativizeUrls
