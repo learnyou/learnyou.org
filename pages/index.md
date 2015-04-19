@@ -45,4 +45,4 @@ If you want to know the details, read the [legal code][ccsa].
 [ccsa]: http://www.gnu.org/licenses/fdl.html
 
 The content of this site is licensed under the
-[Creative Commons Attribution-NoDerivatives 4.0 International License](http://creativecommons.org/licenses/by-nd/4.0/legalcode).
+[Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/legalcode).
