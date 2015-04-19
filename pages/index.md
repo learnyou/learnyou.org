@@ -27,11 +27,6 @@ know what IRC is, or you don't have a client set up, you can connect through
 If you have any questions about LYSA (or math), feel free to ask in the channel,
 or in the issue tracker.
 
-We'll probably set up a blog pretty soon.
-
-The maintainer of this site is Nick Chambers. He can be reached at
-`DTSCode@gmail.com`.
-
 # License
 
 LYSA is licensed under the [GNU Free Documentation License][ccsa]. This means
