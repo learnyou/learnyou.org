@@ -62,11 +62,15 @@ main = hakyll $ do
     route idRoute
     compile copyFileCompiler
 
-  match "images/*" $ do
+  match "res/*" $ do
     route idRoute
     compile copyFileCompiler
 
-  match "fonts/*" $ do
+  match "res/*/*/*" $ do
+    route idRoute
+    compile copyFileCompiler
+
+  match "images/*" $ do
     route idRoute
     compile copyFileCompiler
 
