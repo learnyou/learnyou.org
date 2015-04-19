@@ -1,1 +1,4 @@
 ghp
+*.hi
+_cache
+_site
