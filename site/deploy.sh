@@ -1,7 +1,10 @@
 #!/bin/sh
 
 ./main.hs rebuild
-mv _site www
-tar czvf www.tar.gz www
-scp www.tar.gz root@learnyou.org:/usr/share/nginx/www.tar.gz
-rm _site www www.tar.gz -rv
+cd prod
+git ls-files | xargs git rm
+cp -rv ../_site/* .
+git add .
+git commit -m "$(date)"
+git push -u origin master
+cd ..
