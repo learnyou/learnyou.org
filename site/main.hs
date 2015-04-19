@@ -2,32 +2,7 @@
 
 {-# LANGUAGE OverloadedStrings #-}
 
--- |This file builds and/or serves the site. To see the available
--- options run the command "runhaskell main.hs help".
--- 
--- You need to install Hakyll before running this. "cabal install
--- hakyll" will do the trick. If that doesn't work, please see
--- https://github.com/bitemyapp/learnhaskell for installation
--- instructions, then run the command again. If that still doesn't
--- work, please open an issue on
--- https://github.com/pharpend/lyse/issues .
--- 
--- You'll also need SASS to compile the stylesheets. You can get SASS
--- by running "gem install sass". If that doesn't work, please install
--- Ruby, then run the command again. If that still doesn't work,
--- please open an issue on https://github.com/pharpend/lyse/issues .
--- 
--- Once you have installed all of the dependencies, you can either
--- compile the program with "ghc main.hs", and then run "./main". The
--- resulting binary will be marginally faster, but the compilation
--- will create a plethora of stupid files in the working
--- directory. For that reason, I recommend simply running the script
--- with "runhaskell main.hs serve".
--- 
--- Copyright (C) 2014, Various Contributors.
--- 
--- For a list of contributors, please see the CONTRIBUTORS file in the
--- root directory in this repository.
+-- Copyright (C) 2014-2015, Various Contributors.
 -- 
 -- This program is free software: you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by
@@ -86,8 +61,10 @@ main = hakyll $ do
 
   match "templates/*" $ compile templateCompiler
 
-defaultCompile = compile $ pandocCompilerWith def
-                             (def { writerHTMLMathMethod = MathJax
-                                                             "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
-                                  }) >>= loadAndApplyTemplate "templates/default.html"
-                                           defaultContext >>= relativizeUrls
+defaultCompile =
+  compile $
+    pandocCompilerWith def
+      (def
+         { writerHTMLMathMethod = MathJax
+                                    "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+         }) >>= loadAndApplyTemplate "templates/default.html" defaultContext >>= relativizeUrls
