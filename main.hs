@@ -58,7 +58,7 @@ main = hakyll $ do
 
 
 defaultCompile = do
-  let pandocWriterOptions = def { writerHTMLMathMethod = MathJax "res/mathjax/MathJax.js" }
+  let pandocWriterOptions = def -- { writerHTMLMathMethod = MathJax "res/mathjax/MathJax.js" }
   compile $ pandocCompilerWith def pandocWriterOptions
             >>= loadAndApplyTemplate "templates/default.html" defaultContext
             >>= relativizeUrls
