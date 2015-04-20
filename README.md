@@ -16,6 +16,11 @@ The file hierarchy is explained in `main.hs`.
 1. [Install Haskell](https://github.com/bitemyapp/learnhaskell#getting-set-up)
 2. `cabal install hakyll pandoc`
 3. `./main.hs rebuild && ./main.hs serve`
+
+   This step takes a crazy amount of time. This is mostly because I
+   included all of MathJax in the website. (This is so the site works in
+   browsers with XSS protection).
+
 4. `firefox http://localhost:8000`
 
 # Contact
