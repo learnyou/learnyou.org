@@ -33,11 +33,7 @@ sass = getResourceLBS
 
 main :: IO ()
 main = hakyll $ do
-  match "res/*" $ do
-    route idRoute
-    compile copyFileCompiler
-
-  match "res/*/*/*" $ do
+  match "res/**" $ do
     route idRoute
     compile copyFileCompiler
 
