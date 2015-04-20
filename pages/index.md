@@ -7,7 +7,9 @@ We only have two projects at the moment:
 
 1. [*Learn You Some Algebras for Glorious Good!*](/lysa.html), a math
    textbook.
-2. This website.
+
+2. This website. The source for this site can be found
+   [on our GitHub page](https://github.com/learnyou/website).
 
 *What does "free and open-source" mean?*
 
