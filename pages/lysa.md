@@ -27,6 +27,23 @@ connect through [FreeNode's webchat][webchat]. You can email me
 If you have any questions about LYSA (or math), feel free to ask in the
 channel, or in the issue tracker.
 
+# Contributing
+
+I made a screencast for people who want to contribute (34:38):
+
+<div class="jumbotron">
+  <video src="/videos/contributing.webm" width="100%">
+</div>
+
+Sorry the text is so small. I tried to make it large enough so people
+could read it, but I failed.
+
+The links I referenced:
+
+* [The Git book](http://git-scm.com/book)
+* [The LaTeX book](https://en.wikibooks.org/wiki/LaTeX)
+* [The Erlang git commit guide](https://github.com/erlang/otp/wiki/Writing-good-commit-messages)
+
 # License
 
 LYSA is licensed under the [GNU Free Documentation License][gfdl]. This
