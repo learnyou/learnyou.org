@@ -28,11 +28,19 @@ import       System.Posix.Resource
 import       Text.Pandoc
 
 sass :: Compiler (Item ByteString)
-sass = getResourceLBS
-       >>= withItemBody (unixFilterLBS "sass" ["--stdin", "--style", "compressed"]) 
-
+sass = 
+  getResourceLBS 
+  >>= withItemBody (unixFilterLBS "sass" ["--stdin"             
+                                         , "--style"
+                                         , "compressed"        
+                                         ])
+  
 main :: IO ()
 main = hakyll $ do
+  match "res/stylesheets/*" $ do
+    route $ setExtension "css"
+    compile sass
+
   match "res/**" $ do
     route idRoute
     compile copyFileCompiler
@@ -42,8 +50,13 @@ main = hakyll $ do
     compile copyFileCompiler
 
   match "pages/*" $ do
-    route $ composeRoutes (gsubRoute "pages/" (const "")) (setExtension "html")
-    defaultCompile
+    route $ 
+      composeRoutes (gsubRoute "pages/" (const "")) 
+                    (setExtension "html")
+    compile $
+      pandocCompilerWith def def
+        >>= loadAndApplyTemplate "templates/default.html" defaultContext
+        >>= relativizeUrls
 
   match "stylesheets/*" $ do
     route $ setExtension "css"
@@ -51,10 +64,3 @@ main = hakyll $ do
 
   match "templates/*" $
     compile templateCompiler
-
-
-defaultCompile = do
-  let pandocWriterOptions = def -- { writerHTMLMathMethod = MathJax "res/mathjax/MathJax.js" }
-  compile $ pandocCompilerWith def pandocWriterOptions
-            >>= loadAndApplyTemplate "templates/default.html" defaultContext
-            >>= relativizeUrls
