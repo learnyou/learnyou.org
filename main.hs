@@ -58,9 +58,9 @@ main = hakyll $ do
         >>= loadAndApplyTemplate "templates/default.html" defaultContext
         >>= relativizeUrls
 
-  match "stylesheets/*" $ do
-    route $ setExtension "css"
-    compile sass
+  match "videos/*" $ do
+    route idRoute
+    compile copyFileCompiler
 
   match "templates/*" $
     compile templateCompiler
