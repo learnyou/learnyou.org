@@ -29,20 +29,9 @@ channel, or in the issue tracker.
 
 # Contributing
 
-I made a screencast for people who want to contribute (34:38):
-
-<div class="jumbotron">
-  <video src="/videos/contributing.webm" width="100%">
-</div>
-
-Sorry the text is so small. I tried to make it large enough so people
-could read it, but I failed.
-
-The links I referenced:
-
-* [The Git book](http://git-scm.com/book)
-* [The LaTeX book](https://en.wikibooks.org/wiki/LaTeX)
-* [The Erlang git commit guide](https://github.com/erlang/otp/wiki/Writing-good-commit-messages)
+Contributions are welcome and needed. Please see the
+[contributing guide](https://github.com/learnyou/lysa/blob/master/en/CONTRIBUTING.md)
+first.
 
 # License
 
