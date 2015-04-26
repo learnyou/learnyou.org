@@ -37,11 +37,15 @@ sass =
   
 main :: IO ()
 main = hakyll $ do
-  match "res/stylesheets/*" $ do
+  match "raw/stylesheets/*" $ do
     route $ setExtension "css"
     compile sass
 
-  match "res/**" $ do
+  match "lysa-dist/**" $ do
+    route idRoute
+    compile copyFileCompiler
+
+  match "raw/**" $ do
     route idRoute
     compile copyFileCompiler
 

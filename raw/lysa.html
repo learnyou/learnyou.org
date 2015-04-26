@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="author" content="">
+  <title>Learn You Some Algebras for Glorious Good!</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<header>
+<h1 class="title">Learn You Some Algebras for Glorious Good!</h1>
+<h2 class="author"></h2>
+</header>
+<p>Copyright © 2014-2015</p>
+<p>Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in [gfdl].</p>
+<h1 id="editors-noted-contributors" class="unnumbered">Editors &amp; Noted Contributors</h1>
+<p>[4em]<span>2em</span></p>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span> <span>Alexander G Bauer <span><script type="text/javascript">
+<!--
+h='&#x63;&#114;&#x6f;&#102;&#116;&#x65;&#114;&#46;&#x6f;&#114;&#x67;';a='&#64;';n='&#x73;&#x61;&#x73;&#104;&#x61;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+'&lt;<span>sasha@crofter.org</span>&gt;'+'<\/'+'a'+'>');
+// -->
+</script><noscript>&#60;&#60;&#x73;&#112;&#x61;&#110;&#62;&#x73;&#x61;&#x73;&#104;&#x61;&#64;&#x63;&#114;&#x6f;&#102;&#116;&#x65;&#114;&#46;&#x6f;&#114;&#x67;&#60;&#x2f;&#x73;&#112;&#x61;&#110;&#62;&#62;&#32;&#40;&#x73;&#x61;&#x73;&#104;&#x61;&#32;&#x61;&#116;&#32;&#x63;&#114;&#x6f;&#102;&#116;&#x65;&#114;&#32;&#100;&#x6f;&#116;&#32;&#x6f;&#114;&#x67;&#x29;</noscript></span><br />
+</span> <span>Randy Brown <span><script type="text/javascript">
+<!--
+h='&#98;&#x65;&#x69;&#110;&#x67;&#98;&#114;&#x6f;&#x77;&#110;&#46;&#110;&#x65;&#116;';a='&#64;';n='&#114;&#x61;&#110;&#100;&#x79;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+'&lt;<span>randy@beingbrown.net</span>&gt;'+'<\/'+'a'+'>');
+// -->
+</script><noscript>&#60;&#60;&#x73;&#112;&#x61;&#110;&#62;&#114;&#x61;&#110;&#100;&#x79;&#64;&#98;&#x65;&#x69;&#110;&#x67;&#98;&#114;&#x6f;&#x77;&#110;&#46;&#110;&#x65;&#116;&#60;&#x2f;&#x73;&#112;&#x61;&#110;&#62;&#62;&#32;&#40;&#114;&#x61;&#110;&#100;&#x79;&#32;&#x61;&#116;&#32;&#98;&#x65;&#x69;&#110;&#x67;&#98;&#114;&#x6f;&#x77;&#110;&#32;&#100;&#x6f;&#116;&#32;&#110;&#x65;&#116;&#x29;</noscript></span><br />
+</span> <span>Nick Chambers <span><script type="text/javascript">
+<!--
+h='&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#68;&#84;&#x53;&#x43;&#x6f;&#100;&#x65;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+'&lt;<span>DTSCode@gmail.com</span>&gt;'+'<\/'+'a'+'>');
+// -->
+</script><noscript>&#60;&#60;&#x73;&#112;&#x61;&#110;&#62;&#68;&#84;&#x53;&#x43;&#x6f;&#100;&#x65;&#64;&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;&#60;&#x2f;&#x73;&#112;&#x61;&#110;&#62;&#62;&#32;&#40;&#68;&#84;&#x53;&#x43;&#x6f;&#100;&#x65;&#32;&#x61;&#116;&#32;&#x67;&#x6d;&#x61;&#x69;&#108;&#32;&#100;&#x6f;&#116;&#32;&#x63;&#x6f;&#x6d;&#x29;</noscript></span><br />
+</span> <span>Ng Wei En <span><script type="text/javascript">
+<!--
+h='&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#x77;&#x65;&#x69;&#50;&#x39;&#x31;&#50;&#46;&#x73;&#x75;&#112;&#112;&#48;&#114;&#116;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+'&lt;<span>wei2912.supp0rt@gmail.com</span>&gt;'+'<\/'+'a'+'>');
+// -->
+</script><noscript>&#60;&#60;&#x73;&#112;&#x61;&#110;&#62;&#x77;&#x65;&#x69;&#50;&#x39;&#x31;&#50;&#46;&#x73;&#x75;&#112;&#112;&#48;&#114;&#116;&#64;&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;&#60;&#x2f;&#x73;&#112;&#x61;&#110;&#62;&#62;&#32;&#40;&#x77;&#x65;&#x69;&#50;&#x39;&#x31;&#50;&#46;&#x73;&#x75;&#112;&#112;&#48;&#114;&#116;&#32;&#x61;&#116;&#32;&#x67;&#x6d;&#x61;&#x69;&#108;&#32;&#100;&#x6f;&#116;&#32;&#x63;&#x6f;&#x6d;&#x29;</noscript></span><br />
+</span> <span>Anton Golov <span><script type="text/javascript">
+<!--
+h='&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#106;&#x65;&#x73;&#x79;&#x73;&#112;&#x61;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+'&lt;<span>jesyspa@gmail.com</span>&gt;'+'<\/'+'a'+'>');
+// -->
+</script><noscript>&#60;&#60;&#x73;&#112;&#x61;&#110;&#62;&#106;&#x65;&#x73;&#x79;&#x73;&#112;&#x61;&#64;&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;&#60;&#x2f;&#x73;&#112;&#x61;&#110;&#62;&#62;&#32;&#40;&#106;&#x65;&#x73;&#x79;&#x73;&#112;&#x61;&#32;&#x61;&#116;&#32;&#x67;&#x6d;&#x61;&#x69;&#108;&#32;&#100;&#x6f;&#116;&#32;&#x63;&#x6f;&#x6d;&#x29;</noscript></span><br />
+</span> <span>Ben Z RF <span><script type="text/javascript">
+<!--
+h='&#98;&#x65;&#110;&#122;&#114;&#102;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#98;&#x65;&#110;&#122;&#114;&#102;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+'&lt;<span>benzrf@benzrf.com</span>&gt;'+'<\/'+'a'+'>');
+// -->
+</script><noscript>&#60;&#60;&#x73;&#112;&#x61;&#110;&#62;&#98;&#x65;&#110;&#122;&#114;&#102;&#64;&#98;&#x65;&#110;&#122;&#114;&#102;&#46;&#x63;&#x6f;&#x6d;&#60;&#x2f;&#x73;&#112;&#x61;&#110;&#62;&#62;&#32;&#40;&#98;&#x65;&#110;&#122;&#114;&#102;&#32;&#x61;&#116;&#32;&#98;&#x65;&#110;&#122;&#114;&#102;&#32;&#100;&#x6f;&#116;&#32;&#x63;&#x6f;&#x6d;&#x29;</noscript></span><br />
+</span> </span></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p>[4em]<span>2em</span></p>
+<h1 id="ch: Introduction">Introduction</h1>
+<p>[intro] [ch:intro] [ch:introduction]</p>
+<p>Before I bore you with a bunch of stuff you don’t care about, let’s do some math, shall we?</p>
+<p>There are essentially three notions with which you need to be familiar in order to do anything interesting in math. These three things are , , and . Unfortunately, to be familiar with one, you have to be familiar with the other two.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
+<p>So, what are each of those things?</p>
+<ul>
+<li><p>A is an unordered collection of things. There is also no repetition. For instance, <span class="math inline">\({\left\{\,2, 5\,\right\}}\)</span> is the same as <span class="math inline">\({\left\{\,5, 2\,\right\}}\)</span> (because order doesn’t matter). <span class="math inline">\({\left\{\,2, 5, 5\,\right\}}\)</span> would be the same set, because there’s no notion of multiplicity.</p>
+<p>You see what I did there? I subtly introduced some notation: the bracket notation for sets. This math stuff really isn’t all that difficult. It’s also really interesting if you approach it the right way.</p></li>
+<li><p>A is a mathematical construct (well, obviously, else I wouldn’t be talking about it). Basically, it takes some input, does something to it, and spits out some output. If you give the function the same input a bunch of times, you should get the same result each time. This concept is called “referential transparency.” If the function is not referentially transparent, then it’s not a function. It’s something else.</p></li>
+<li><p>A is basically where you take a bunch of simple facts, called , and chain them together to make s. It’s sort of like sticking puzzle pieces together to form a picture.</p>
+<p>The puzzle pieces (in this case, the axioms) aren’t usually very interesting on their own. However, the picture they form (in this case, the theorem) can be really cool and enlightening. The proof would be analogous to an explicit set of instructions explaining how to put the pieces together.</p></li>
+</ul>
+<p>Once you are familiar with each of those concepts, we can do all sorts of cool stuff. Throughout the book, we will prove all of the following:</p>
+<ul>
+<li><p>If you tap your finger against a bridge at exactly the right frequency, the bridge will collapse. (Resonance)</p></li>
+<li><p>The formula used to calculate the interest rate on your mortgage is actually just a fancy form of the ratios of angles in a triangle. (Euler’s formula)</p></li>
+</ul>
+<h2 id="s: How to read the book">How to read the book</h2>
+<p>The best way to read this book is to just read it. Don’t skip sections, or look ahead, or anything like that. Just read it straight through. It’s also pretty important that you read the rest of this chapter. I promise it’s not too boring.</p>
+<p>Do all of the exercises. There aren’t that many. However, they are pretty difficult. The exercises all have solutions, which are in [ex-solutions].</p>
+<p>The exercises are designed to make you think, and widen your perspective on the topic at hand. They are not designed to be tedious. They are difficult, but the good kind of difficult.</p>
+<p>It would be perfectly okay to just do the exercises (all of them), and then go back and read the text when you don’t understand something.</p>
+<p>is a reference section. It contains every single theorem, definition, identity, and property in this book. Unlike the contents of this book, [appendix-d] is not meant to be read straight through. However, if you don’t remember the name of something, or want to know if some property is true, [appendix-d] is the place to look.</p>
+<p>My writing strategy involves writing the bare minimum information, with criminally few examples or exercises, so I can get the structure right, then to go back and fill in the blanks. So, until this book is finished, it’s going to be horrifyingly fast paced.</p>
+<h2 id="s: Introduction (for real this time)">Introduction (for real this time)</h2>
+<p>[real-intro]</p>
+<p>This is a math book. Well, duh. Why did I write it?</p>
+<p>Most math (and science) books nowadays seem to value keeping an academic tone over ensuring that the reader understands the material, and — more importantly — enjoys reading the book.</p>
+<p>I take the opposite approach. I want to create a book that is fun to read and easy to understand, while eschewing the practice of making myself look good.</p>
+<p>In high school, and even in college, I noticed that subjects were taught with pragmatism in mind: here’s what you need to learn to have a job doing X. It completely zaps the intellectual curiosity of the students. I think that’s a shame. I hope reading this book will rekindle your intellectual curiosity.</p>
+<p>The inspiration for this book is <a href="https://learnyouahaskell.com/"><span><em>Learn You a Haskell for Great Good!</em></span>, by Miran Lipovača</a>. Haskell is a programming language, and LYAH is a great book for learning Haskell. If you are interested in a print copy of LYAH, see <span class="citation" data-cites="lyah">\cite{lyah}</span>.</p>
+<p>There is also an incomplete and unofficial <span>Russian translation (<span><span><a href="https://github.com/gazay/lysa" class="uri">https://github.com/gazay/lysa</a></span></span>)</span>, courtesy of Alexey Gaziev.</p>
+<h3 id="ss: Programming">Programming</h3>
+<p>In this book, I cover a lot of hard stuff.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> Sometimes, it’s useful to program your way through a problem. You don’t have to, but it helps. Every programmer will tell you that programming teaches a manner of thinking.</p>
+<p>Many programmers will cite Steve Jobs’s<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> famous quote, regarding the use of programming in his job,</p>
+<p>[sic] …much more importantly, it had nothing to do with using [the programs we wrote] for anything practical. It had to do with using them to be a mirror of your thought process; to actually learn how to think. I think everybody in this country should learn how to program a computer — should learn a computer language — because it teaches you how to think.</p>
+<p>That first sentence or two is actually a pretty good description of mathematics (and programming). Both are incredibly useful, and have endless practical applications.</p>
+<p>That’s not the point, though. The whole usefulness thing is a side gig. It’s about learning how to think, and having a rigorous language through which to express your thoughts.</p>
+<p>Furthermore, the rigor of the language helps you build upon your current thoughts to find out even cooler things. That’s what math (and programming) is about.</p>
+<p><span>Sage (<span><span><a href="https://www.sagemath.org/" class="uri">http://www.sagemath.org/</a></span></span>)</span> is a mathematically-oriented programming language. If you’re familiar with Mathematica or Maple, Sage is an open-source alternative.</p>
+<p>Sage is perhaps most useful in generating graphs transparently. Sage is also capable of solving your equations, finding holes in your logic, the whole 9 yards.</p>
+<p>I would include instructions for installing Sage. However, it takes up a lot of space, and my instructions would quickly be obselete. You can find better instructions for installing Sage on <span>their website (<span><span><a href="https://wiki.sagemath.org/DownloadAndInstallationGuide" class="uri">http://wiki.sagemath.org/DownloadAndInstallationGuide</a></span></span>)</span>.</p>
+<h2 id="s: The community">The community</h2>
+<p>Despite the fact that I used “I” in the first part of the book, LYSA is actually a community project, and many people participate in the writing of this book.</p>
+<p>If you want to talk to us, or to other math people, come see us in <span>#lysa</span> on Freenode. If you don’t know what IRC is, or you don’t have a client set up, you can connect through <span>Freenode’s webchat (<span><span><a href="https://webchat.freenode.net/?channels=lysa" class="uri">http://webchat.freenode.net/?channels=lysa</a></span></span>)</span>.</p>
+<p>If you have any questions about LYSA (or math), feel free to ask in the IRC channel (<span>#lysa</span> on FreeNode in case you forgot).</p>
+<p>If you want to submit a correction, or have some issue, or want to add some content, really anything having to do with the content of the book, you can visit <span>our GitHub page (<span><span><a href="https://github.com/learnyou/lysa" class="uri">https://github.com/learnyou/lysa</a></span></span>)</span>. We also have a <span>website (<span><span><a href="https://learnyou.org" class="uri">http://learnyou.org</a></span></span>)</span> and a <span>community on Reddit (<span><span><a href="https://lysa.reddit.com/" class="uri">https://lysa.reddit.com/</a></span></span>)</span>.</p>
+<h3 id="ss: Freedom">Freedom</h3>
+<p>This book is open-source. That means a number of things:</p>
+<ol>
+<li><p>You are free to use this book as you like.</p></li>
+<li><p>You are free to modify the book as you wish. The source is available at <span><span><a href="https://github.com/learnyou/lysa" class="uri">https://github.com/learnyou/lysa</a></span></span>.</p></li>
+<li><p>You are free to redistribute and/or sell exact copies of this book as you wish.</p></li>
+<li><p>You are free to redistribute and/or sell modified copies of this book as you wish.</p></li>
+</ol>
+<p>If, for instance, you are a schoolteacher and want to use this for your class, you are free to edit it to your liking and give the modified copy to your students. The only string I attach is, you have to allow anyone to whom you give the book do the same thing (i.e. they have to be free to copy/modify/change your version).</p>
+<h2 id="s: Target audience">Target audience</h2>
+<p>The explanation of why programming is useful is a good segue into discussing the target audience.</p>
+<p>When I was first writing the book, I wrote it in an effort to strengthen my own understanding. So, the target audience was me. The very first versions of this book were about a abstractish branch of math called commutative algebra. Later on, it seemed more fitting to abstractly go over the basics of math. That’s what the current version of the book does.</p>
+<p>That doesn’t answer the question: who is the target audience? Well, people who want to learn basic and intermediate algebra, and to learn why it’s so interesting.</p>
+<p>I mentioned this in [real-intro]. Most books (and people) treat math as a tool you can use for calculations. I treat math as a language you can use to express your ideas. That’s the core difference. This book will hopefully give you an interest in math itself, rather than just a cursory knowledge of it.</p>
+<p>With that in mind, my book is going to approach the topics much differently than other books on the same topic. I rely very much on abstraction and intuition.</p>
+<p>It’s that you know all of the basics about arithmetic: you should know how to add, subtract, multiply, divide, and exponentiate. You should also be familiar with the following sets, although it’s not really hard to pick up:</p>
+<ol>
+<li><p><span class="math inline">\({\mathbb{N}}{:=}{\left\{\,0,1,2,3,4, \dots \,\right\}}\)</span></p></li>
+<li><p><span class="math inline">\({\mathbb{Z}}{:=}{\left\{\,\dots, {`}{4}, {`}{3}, {`}{2}, {`}{1}, 0,1,2,3,4, \dots \,\right\}}\)</span></p></li>
+<li><p>The real numbers <span class="math inline">\({\mathbb{R}}\)</span>.</p></li>
+<li><p>The rational numbers <span class="math inline">\({\mathbb{Q}}\)</span>.</p></li>
+<li><p>The irrational numbers <span class="math inline">\({\mathbb{I}}{:=}{\mathbb{R}}\bs {\mathbb{Q}}\)</span>.</p></li>
+<li><p>The complex numbers <span class="math inline">\({\mathbb{C}}\)</span>.</p></li>
+</ol>
+<p>If not, you should look at [basic-arithmetic]. is more or less a blatant ripoff of <span class="citation" data-cites="landau-analysis">\cite{landau-analysis}</span>. I would like to think that my appendix is much less dry, and does a bit more in the explaining department. Landau’s wonderful book is very dry. It’s just theorem after theorem after theorem. It’s very rigorous, but you’ll fall asleep after reading a page.</p>
+<h2 id="s: Conventions used throughout">Conventions used throughout</h2>
+<p>You don’t actually have to read this section, but it would be useful.</p>
+<ol>
+<li><p><span><span>Things in monospace</span></span> are either code snippets or commands to be run in a terminal. I have separate stylings for and <span><span>inline code snippets</span></span>. That said, they are separate but equal, at least for the time being.</p></li>
+<li><p>The § symbol refers to a section. So § 3.2 means “chapter 3, section 2”.</p></li>
+<li><p>Even though most of the writers are American, I still use the British convention of putting periods after quotation marks: “like this”. The British convention is less ambiguous. If you see the American convention anywhere in this book, please report it.</p></li>
+<li><p>I will often recommend software. However, I will not recommend any non-libre software, or any software that costs money.</p></li>
+<li><p>“I” refers to me. “We” refers to both me and you, the reader. “You” refers to, you guessed it, the reader. It’s the convention in academia to use the so-called “royal we”, such as “we subtract 2 from both sides of the equation to obtain the result …”.</p>
+<p>Sometimes, we will accidentally use the royal we, out of habit. Crap, I just did it there! See? It’s very difficult to avoid. Like any of the other conventions herein, if you see it broken, please report the error to the authors. You can use the <span><span>bug tracker (<span><span><a href="https://github.com/learnyou/lysa/issues/new" class="uri">https://github.com/learnyou/lysa/issues/new</a></span></span>)</span></span>, or, if you don’t want to make a gratis GitHub account, you can <span>email me at <span><span>peter@harpending.org</span></span></span>.</p></li>
+<li><p>Oh yeah, sometimes I’ll use <span><span>monospace</span></span> in things like URLs or emails for the sake of disambiguity.</p></li>
+<li><p>Most of the authors use some version of Linux. Hence, when there are instructions for computer things (such as installing Haskell), I’ll write instructions for Linux, because that’s what I know. There are two solutions here:</p>
+<ol>
+<li><p>You could try out Linux (it’s gratis, and it’s easy).</p></li>
+<li><p>If you know how to do the thing on your OS, and there aren’t instructions for your OS, you could write up instructions and add them to the book. If you don’t know how to do that, you could bring it up in the <span><span>bug tracker (<span><span><a href="https://github.com/learnyou/lysa/issues/new" class="uri">https://github.com/learnyou/lysa/issues/new</a></span></span>)</span></span> or <span>email me at <span><span>peter@harpending.org</span></span></span>.</p></li>
+</ol></li>
+<li><p>If you see some number as a superscript in the middle of text: like this<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>, then the number refers to a footnote. If the superscript number is in the middle of math, it’s probably just math.</p></li>
+<li><p>If there’s some number in brackets, like this: <span class="citation" data-cites="lyah">\cite{lyah}</span>, then it’s a citation. If you’re reading this as a PDF, you can actually click on the number, and your PDF reader will take you to the relevant bibliography entry. Go ahead, check it out! I’ll wait. You can do the same thing for footnotes and URLs.<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a></p>
+<p>[conventions]</p></li>
+<li><p>If you see something , it’s usually a vocabulary word. Often there will be a term with a section number next to it: <span> ([d-equality])</span>, usually somewhere in [appendix-d]. is a reference section, which has theorems, vocabulary, identities, stuff like that. So, the reference to a section in [appendix-d] next to a term points to the relevant section in the appendix. Like all of the other references — citations, footnotes, URLs — you can click on the section title, and your PDF reader will take you there.</p></li>
+</ol>
+<h1 id="ch: Booleans, propositional logic, and simple operators">Booleans, propositional logic, and simple operators</h1>
+<p>[booleans] [ch:booleans] [ch:bools]</p>
+<p>Before we get into interesting content, you have to understand some stuff. This stuff is pretty easy. This will likely be one of the shorter and easier chapters in the book.</p>
+<p>Most people think math is about dealing with numbers and pumping out formulas. Well, that’s not what math is about. As said in [intro], it’s about using math as a language to express your thoughts. Most people don’t think about numbers all day; thus, we deal with things in math that aren’t numbers.</p>
+<p>In this next section, we’re going to outline some basic rules for reasoning about things. You need to know these rules to do really cool stuff. Although, as you will (hopefully) see, these rules can be fun to toy around with on their own.</p>
+<p>It’s okay if you don’t remember all of these rules. You can always find a list in [d-booleans].</p>
+<h2 id="s: Propositions">Propositions</h2>
+<p>[props]</p>
+<p>The first thing you need to understand is the notion that “if x is true, then y is also true. But, if y is true, it’s not necessarily true that x is false.” As always, mathematicians are too lazy to write this stuff out by hand, so they have notation for it.</p>
+<ol>
+<li><p><span class="math inline">\(a \implies b\)</span> means that “<span class="math inline">\(a\)</span> implies <span class="math inline">\(b\)</span>”. It doesn’t necessarily mean that <span class="math inline">\(b\)</span> implies <span class="math inline">\(a\)</span>. It means that if <span class="math inline">\(a\)</span> is true, then <span class="math inline">\(b\)</span> is also true.</p>
+<p>Here’s an example:</p>
+<p>If someone is decapitated, then they will die. So,</p>
+<p><span class="math display">\[\text{Decapitated} \implies \text{Dead}\]</span></p>
+<p>However, if someone is dead, it doesn’t necessarily mean that they were decapitated. They could have been shot, or stabbed, or had a heart attack. There are endless possibilities.</p></li>
+<li><p><span class="math inline">\(a \impliedby b\)</span> is the same as writing <span class="math inline">\(b \implies a\)</span>. It’s sometimes convenient to use <span class="math inline">\(a \impliedby b\)</span> instead. <span class="math inline">\(a \impliedby b\)</span> should be read “<span class="math inline">\(a\)</span> is implied by <span class="math inline">\(b\)</span>”.</p></li>
+<li><p>When I strike through some mathematical operator, like this: <span class="math inline">\({\centernot\implies}\)</span>, it means that you can semantically put “not” in front of whatever the operator says. So, <span class="math inline">\({\centernot\implies}\)</span> means “not implies”. That doesn’t make much grammatical sense in English, so “does not imply” might be better. Nonetheless, you get the point.</p>
+<p>Moving on from the example above:</p>
+<p><span class="math display">\[\text{Decapitated} \implies \text{Dead}\]</span></p>
+<p>If someone is decapitated, then they’re also dead (at least within a few seconds). However, if someone is dead, it’s not necessarily true that they were decapitated.</p>
+<p><span class="math display">\[\text{Decapitated} {\centernot\impliedby}\text{Dead}\]</span></p></li>
+<li><p>If something is not true, then I’ll put a <span class="math inline">\(\lnot\)</span> in front of it. So, if I want to say that <span class="math inline">\(a\)</span> is false, then I’ll write <span class="math inline">\(\lnot a\)</span>.</p></li>
+<li><p>If I want to pose a question, I could just ask the question. For instance, “Is <span class="math inline">\(\lnot\text{Decapitated}\impliedby\lnot\text{Dead}\)</span> true?”.</p>
+<p>However, that quickly becomes difficult, usually when there are multiple assertions in a mathematical expression, and you don’t know which one I’m asking about. Moreover, since I use the same font for text and math, if I have both, it might be hard to tell which is math and which is text. So, to help with ambiguity, I’ll put a ? over the operator I’m asking about:</p>
+<p><span class="math display">\[\lnot \text{Decapitated} {\stackrel{?}{\impliedby}}\lnot\text{Dead}\]</span></p>
+<p>See, that’s much easier.</p></li>
+<li><p>Now, on to that question - Is “not decapitated” implied by “not dead”. Well, let’s think about it. If someone is not dead, then they couldn’t have been decapitated, because if they were decapitated, then they would be dead. Therefore, if someone is not dead, then they weren’t decapitated.</p>
+<p>That word jumble was probably confusing. Mathematicians don’t like to be confused. I’ll make it symbolic for you.</p>
+<p>If</p>
+<p><span class="math display">\[\text{Decapitated} \implies \text{Dead}\]</span></p>
+<p>then</p>
+<p><span class="math display">\[\lnot \text{Decapitated} \impliedby \lnot\text{Dead}\]</span></p>
+<p>This is another rule about propositional logic:</p>
+<p>If</p>
+<p><span class="math display">\[a \implies b\]</span></p>
+<p>then</p>
+<p><span class="math display">\[\lnot b \implies \lnot a\]</span></p></li>
+</ol>
+<h2 id="s: Booleans as a monoid">Booleans as a monoid</h2>
+<p>Okay, first of all, what the hell does the section title mean?</p>
+<p>Let’s go over it:</p>
+<ol>
+<li><p>the values true and false. “Boolean algebra” is what we are doing in this section. Dealing with Booleans.</p>
+<p>Because the term is named after a guy named George Boole, who studied them to extent.</p></li>
+<li><p>A is a set of things, where you can combine the individual things together. Additionally, there has to be a .</p>
+<p>Well, let me explain it at the end of the chapter.</p></li>
+</ol>
+<p>So, sometimes we need to combine two pieces of logic together. There are two ways we can do this - logical-or and logical-and.</p>
+<p>I put logical- in front of them, because the mathematical meaning is slightly different than the colloquial meaning.</p>
+<p>Mathematicians are lazy, so we don’t like to write “logical-and” whenever we want to say it, so instead we use the symbol <span class="math inline">\(\land\)</span>.</p>
+<p><span class="math inline">\(A \land B\)</span> is true if (and only if) both <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are true. If one of them is false, then the entire thing is false.</p>
+<p>On the other side, we have logical-or. The symbol for logical-or is <span class="math inline">\(\lor\)</span>. <span class="math inline">\(A \lor B\)</span> is true if either <span class="math inline">\(A\)</span> or <span class="math inline">\(B\)</span> is true, or if both of them are true. You could think of logical-or as being equivalent to the colloquial “and/or”.</p>
+<p>If you’re having trouble remembering which symbol is logical-and and which one is logical-or, remember that the logical-and symbol — <span class="math inline">\(\land\)</span> — looks vaguely like an A.</p>
+<h4 id="sss: More formally">More formally</h4>
+<p>There are formal ways to define <span class="math inline">\(\lnot\)</span>, <span class="math inline">\(\land\)</span> and <span class="math inline">\(\lor\)</span></p>
+<p>I’m going to introduce a symbol: <span class="math inline">\({:=}\)</span>. It means “is defined to be equal to”.</p>
+<p><span class="math display">\[x {:=}y\]</span></p>
+<p>means “<span class="math inline">\(x\)</span> is defined to be equal to <span class="math inline">\(y\)</span>”.</p>
+<p>With that in mind, here is a more formal definition of <span class="math inline">\(\land\)</span>:</p>
+<p><span>rclcl</span> &amp; &amp; _ &amp; <span>:=</span>&amp;<br />
+&amp; &amp; x &amp; <span>:=</span>&amp; x<br />
+</p>
+<p>The <span class="math inline">\(\_\)</span> just means “you can ignore whatever goes here”.</p>
+<p>Likewise, for <span class="math inline">\(\lor\)</span>:</p>
+<p><span>rclcl</span> &amp; &amp; _ &amp; <span>:=</span>&amp;<br />
+&amp; &amp; x &amp; <span>:=</span>&amp; x<br />
+</p>
+<p>and finally for <span class="math inline">\(\lnot\)</span>:</p>
+<p><span>rlcl</span> &amp; <span>(x)</span> &amp; <span>:=</span>&amp; x<br />
+&amp; &amp; <span>:=</span>&amp;<br />
+</p>
+<h3 id="ss: Properties of the Boolean operators">Properties of the Boolean operators</h3>
+<p>There are a lot of properties about <span class="math inline">\(\lnot\)</span>, <span class="math inline">\(\land\)</span>, and <span class="math inline">\(\lor\)</span>. Most of them are pretty intuitive, so you won’t have trouble memorizing them. You should try to remember the names of the properties, but it’s not really that important.</p>
+<dl>
+<dt>Cancellative property</dt>
+<dd><p>For all Boolean values <span class="math inline">\(a\)</span>,</p>
+<p><span class="math display">\[\lnot \lnot a = a\]</span></p>
+<p>I mentioned this before somewhere in [props]. This is so simple that it’s impossible to prove. Thus, it’s called an or .</p>
+</dd>
+<dt>Reflexive property</dt>
+<dd><p>For all Boolean values <span class="math inline">\(a\)</span>,</p>
+<p><span class="math display">\[a \land a = a\]</span></p>
+<p>Likewise, for all <span class="math inline">\(a\)</span>,</p>
+<p><span class="math display">\[a \lor a = a\]</span></p>
+<p>This is called the .</p>
+</dd>
+<dt>Associative property</dt>
+<dd><p>For all <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(c\)</span>,</p>
+<p><span class="math display">\[a \land {\left(b \land c\right)} \equiv {\left(a \land b\right)} \land c\]</span></p>
+</dd>
+<dt>Commutative property</dt>
+<dd><p>For all <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>:</p>
+<p><span class="math display">\[a \land b \equiv b \land a\]</span></p>
+</dd>
+<dt>Distributive property</dt>
+<dd><p><span class="math inline">\(a \land {\left(b \lor c\right)} \equiv {\left(a \land b\right)} \lor {\left(a
+      \land c\right)}\)</span></p>
+</dd>
+<dt>De Morgan’s first law</dt>
+<dd><p><span class="math inline">\(\lnot{\left(a \land b\right)} \equiv \lnot a \lor \lnot b\)</span></p>
+</dd>
+<dt>Reflexive property</dt>
+<dd><p><span class="math inline">\(a \lor a \equiv a\)</span></p>
+</dd>
+<dt>Associative property</dt>
+<dd><p><span class="math inline">\(a \lor {\left(b \lor c\right)} \equiv {\left(a \lor b\right)} \lor c\)</span></p>
+</dd>
+<dt>Commutative property</dt>
+<dd><p><span class="math inline">\(a \lor b \equiv b \lor a\)</span></p>
+</dd>
+</dl>
+<p>These values, true and false, are called . They are named after a mathematician named George Boole who studied them to extent.<span class="citation" data-cites="w-boolean-algebra">\cite{w-boolean-algebra}</span></p>
+<h3 id="ss: If (and only if)">If (and only if)</h3>
+<p>I’m going to introduce some new notation: the <span class="math inline">\(\iff\)</span> symbol.</p>
+<p><span class="math display">\[{\left(A \iff B\right)} \iff {\left(A \implies B\right)} \land {\left(A
+  \impliedby B\right)}\]</span></p>
+<p>Okay, what the hell is that?</p>
+<p>If</p>
+<p><span class="math display">\[A \implies B\]</span></p>
+<p>logical-and</p>
+<p><span class="math display">\[B \implies A\]</span></p>
+<p>then</p>
+<p><span class="math display">\[A \iff B\]</span></p>
+<p>Likewise, if</p>
+<p><span class="math display">\[A \iff B\]</span></p>
+<p>then</p>
+<p><span class="math display">\[A \implies B\]</span></p>
+<p>logical-and</p>
+<p><span class="math display">\[B \implies A\]</span></p>
+<p>The symbol  should be read as “if (and only if)”. Sometimes I’ll write the word iff — with two `f’s — that’s the same as “if (and only if)”.</p>
+<p>In order to do the exercises (yes, there are exercises), you need to know these properties of .</p>
+<ol>
+<li><p>For all <span class="math inline">\(a\)</span></p>
+<p><span class="math display">\[a \implies a\]</span></p>
+<p>So, if <span class="math inline">\(a\)</span> is true, that means that <span class="math inline">\(a\)</span> is true. Duh.</p></li>
+<li><p>For all <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(c\)</span>,</p>
+<p>If</p>
+<p><span class="math display">\[a \implies b\]</span></p>
+<p>and</p>
+<p><span class="math display">\[b \implies c\]</span></p>
+<p>then</p>
+<p><span class="math display">\[a \implies c\]</span></p>
+<p>For this reason, we can write <span class="math inline">\(a \implies b \implies c\)</span> without any ambiguity.</p></li>
+</ol>
+<p>Sometimes, mathematicians, such as myself, will use the symbol <span class="math inline">\(\forall\)</span> in the place of “for all”.</p>
+<h3 id="ss: Wait, are you going to tell me what a monoid is?">Wait, are you going to tell me what a monoid is?</h3>
+<p>Okay, you got me!</p>
+<p><span class="math inline">\({\left\{\,{\mathrm{True}},{\mathrm{False}}\,\right\}}\)</span>, along with the operator <span class="math inline">\(\land\)</span> is a monoid. Additionally, <span class="math inline">\({\left\{\,{\mathrm{True}},{\mathrm{False}}\,\right\}}\)</span>, along with the operator <span class="math inline">\(\lor\)</span> forms a monoid.</p>
+<p>The “monoidal identity” just means that if you take any <span class="math inline">\(a\)</span>, and <span class="math inline">\(\land\)</span> it with <span class="math inline">\({\mathrm{True}}\)</span>, you’re going to get <span class="math inline">\(a\)</span> back again.</p>
+<p>The same thing happens with <span class="math inline">\(\lor\)</span> and <span class="math inline">\({\mathrm{False}}\)</span></p>
+<p>For all Boolean values <span class="math inline">\(a\)</span>,</p>
+<p><span class="math display">\[a \land {\mathrm{True}}= a\]</span></p>
+<p>Likewise, for all Boolean values <span class="math inline">\(a\)</span>,</p>
+<p><span class="math display">\[a \lor {\mathrm{False}}= a\]</span></p>
+<h1 id="ch: Sets">Sets</h1>
+<p>[ch:sets]</p>
+<p>In math, it’s often useful to consider of objects. There are basically two types of collections: and . Sets are unordered, and multiplicity doesn’t matter. Vectors are ordered, and multiplicity does matter.</p>
+<p>For instance, <span class="math inline">\({\left\{\,3, 4\,\right\}}\)</span> and <span class="math inline">\({\left\{\,4,3\,\right\}}\)</span> are the same , but <span class="math inline">\(\mvec{3,4}\)</span> and <span class="math inline">\(\mvec{4,3}\)</span> are different .</p>
+<p>Likewise, <span class="math inline">\({\left\{\,20,38\,\right\}}\)</span> and <span class="math inline">\({\left\{\,38,20,38,20,20,20,20,20\,\right\}}\)</span> are the same . You guessed it, <span class="math inline">\(\mvec{20,38}\)</span> and <span class="math inline">\(\mvec{38,20,38,20,20,20,20,20}\)</span> are different . Sets are — at least ostensibly — much more important. More importantly, they are much easier to understand.</p>
+<p>Sets were first studied to extent by Georg Cantor, a German mathematician, in the second half of the nineteenth century. Back in his own day, the results Cantor found by studying sets were considered so thoroughly bizarre that many of his colleagues simply refused to believe that Cantor could be right. In the end, Cantor turned out to be right all along. His ideas can be found in any introductory text on mathematics—including this one.</p>
+<p>You probably figured it out from above: the notation is <span class="math inline">\({\left\{\,\text{Braces}\,\right\}}\)</span> for sets, and <span class="math inline">\(\mvec{\text{Parentheses}}\)</span> for vectors.</p>
+<p>If you can’t remember whether to use braces {the curly things}, or parentheses (the round things), remember: I don’t have a horrible pun having to do with parentheses and vectors, and for that, I apologize.</p>
+<h2 id="s: Elements">Elements</h2>
+<p>Let’s invent a set.</p>
+<p><span class="math display">\[Q = {\left\{\,7, 7, 9, 5, 10, 1, 6, 6, 2, 10\,\right\}}\]</span></p>
+<p>There we go. Remember, order and multiplicity don’t matter. But, for the sake of clarity, let’s put the elements in order, and deduplicate them.</p>
+<p><span class="math display">\[Q = {\left\{\,1, 2, 5, 6, 7, 9, 10\,\right\}}\]</span></p>
+<p>Yay! You may have noticed that I slipped in the word into the previous sentence. Objects in the set are called . Yay, we figured out what that word means!</p>
+<p>It’s too strenuous on our weak mathematical hands to write “<span class="math inline">\(10\)</span> is an element of <span class="math inline">\(Q\)</span>”, so instead we have the symbol <span class="math inline">\(\in\)</span>. <span class="math inline">\(\in\)</span> is a very terrible attempt at drawing an E. If you can’t remember what <span class="math inline">\(\in\)</span> is, think ``</p>
+<p>lement of”.<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a></p>
+<p>So, I’m going to ask you a question:</p>
+<p><span class="math display">\[11 {\stackrel{?}{\in}}Q\]</span></p>
+<p>(See, I used that thing from earlier with the question mark. I told you it would help.) Well, the answer is no, <span class="math inline">\(11\)</span> is not an element of <span class="math inline">\(Q\)</span>. As always, mathematicians are too weak to write “<span class="math inline">\(11\)</span> is not an element of <span class="math inline">\(Q\)</span>” every time they want to say it, so instead they write</p>
+<p><span class="math display">\[11 \notin Q\]</span></p>
+<p>By contrast,</p>
+<p><span class="math display">\[6 \in Q\]</span></p>
+<p>What if we want to say “both <span class="math inline">\(6\)</span> and <span class="math inline">\(2\)</span> are elements of <span class="math inline">\(Q\)</span>”? Well, again, we could write it out like:</p>
+<p><span class="math display">\[{\left(6 \in Q\right)} \land {\left(2 \in Q\right)}\]</span></p>
+<p>But that’s too cumbersome, so instead we’ll write</p>
+<p><span class="math display">\[2, 6 \in Q\]</span></p>
+<p>Only if we put parentheses or braces around <span class="math inline">\(2\)</span> or <span class="math inline">\(6\)</span>.</p>
+<p><span class="math display">\[{\left\{\,2, 6\,\right\}} \in Q\]</span></p>
+<p>That’s confusing, don’t do that (yet).</p>
+<p>There’s one more thing I need to go over, which is the null set - it’s the simplest set, as it contains no elements. “Null set” takes too long to write, so we use <span class="math inline">\({\varnothing}\)</span> instead.</p>
+<h2 id="s: Subsets and Supersets">Subsets and Supersets</h2>
+<p>Remember when I said <span class="math inline">\({\left\{\,2, 6\,\right\}} \in Q\)</span>, and we were really confused? In case you don’t remember, <span class="math inline">\(Q = {\left\{\,1, 2, 5, 6, 7, 9, 10\,\right\}}\)</span>. <span class="math inline">\({\left\{\,2,6\,\right\}}\)</span> is obviously not an element of <span class="math inline">\(Q\)</span>. However, <span class="math inline">\({\left\{\,2, 6\,\right\}}\)</span> is <span class="math inline">\(Q\)</span> but it’s not an element. It’s weird. How do we express this notion?</p>
+<p>The answer is with . “sub” means “smaller”, so a “subset” would be a “smaller set”. <span class="math inline">\(A\)</span> is a subset of <span class="math inline">\(B\)</span> is all of the elements in <span class="math inline">\(A\)</span> are also in <span class="math inline">\(B\)</span>. The notation is <span class="math inline">\(A {\subseteq}B\)</span>. Some people will read that as “<span class="math inline">\(A\)</span> is contained in <span class="math inline">\(B\)</span>”.</p>
+<p>Referring to the previous example,</p>
+<p><span class="math display">\[{\left\{\,2,6\,\right\}} {\subseteq}Q\]</span></p>
+<p>So, actually, there are two types of subsets - and . <span class="math inline">\(A {\subseteq}B\)</span> is for improper subsets. <span class="math inline">\(A {\subset}B\)</span> is for proper subsets. What’s the difference, then?</p>
+<p><span class="math inline">\(A {\subseteq}B\)</span> allows for the possibility that <span class="math inline">\(A = B\)</span>. <span class="math inline">\(A {\subset}B\)</span> means that <span class="math inline">\(B\)</span> is than <span class="math inline">\(A\)</span>; there are some elements in <span class="math inline">\(B\)</span> that are not in <span class="math inline">\(A\)</span>.</p>
+<p>[exists] I’ve already defined <span class="math inline">\(\forall\)</span> in [forall]. I’m now going to add another symbol, <span class="math inline">\(\exists\)</span>, which means “exists”. I mention <span class="math inline">\(\forall\)</span>, because <span class="math inline">\(\exists\)</span> is used in the same context.</p>
+<p>Anyway, back to business. I use <span class="math inline">\({\subseteq}\)</span> for improper subsets, and <span class="math inline">\({\subset}\)</span> for proper subsets. However, some people will use <span class="math inline">\({\subset}\)</span> for improper subsets, and something like <span class="math inline">\(\subsetneq\)</span> or <span class="math inline">\(\subsetneqq\)</span> for proper subsets. You have to look out.</p>
+<p>Here’s something cool: <span class="math inline">\({{\varnothing}}\)</span> has no elements, so it’s a subset of every set.</p>
+<p><span class="math display">\[{{\varnothing}}{\subseteq}A {{;\;}\forall}A\]</span></p>
+<p>I’m sure you can figure this out, two sets are equal iff they have the same elements. <span class="math inline">\(A {\subseteq}B\)</span> means that <span class="math inline">\(B\)</span> has all of the elements that <span class="math inline">\(A\)</span> has. <span class="math inline">\(A {\supseteq}B\)</span> would mean that <span class="math inline">\(A\)</span> has all of the elements of <span class="math inline">\(B\)</span>. So if both of those are true, then <span class="math inline">\(A = B\)</span>. That is:</p>
+<p><span class="math display">\[A = B \iff A {\subseteq}B \land A {\supseteq}B\]</span></p>
+<p>So, what did we learn?</p>
+<ol>
+<li><p>There are unordered collections with no multiplicity, called .</p></li>
+<li><p>There are ordered collections with multiplicity, called .</p></li>
+<li><p>Given an object <span class="math inline">\(o\)</span> and a set <span class="math inline">\(A\)</span>, you can ask <span class="math inline">\(o {\stackrel{?}{\in}}A\)</span>.</p></li>
+<li><p>You can pull smaller sets out of a set (I’ll show you the mechanics below). The way to express that a set is “embedded” in another set, without being an element is with . <span class="math inline">\(A {\stackrel{?}{{\subseteq}}}B\)</span> would be asking “are all of the elements in <span class="math inline">\(A\)</span> also in <span class="math inline">\(B\)</span>?”. (The converse doesn’t necessarily have to be true).</p></li>
+<li><p>There’s a pretty easy set which has no elements, called <span class="math inline">\({{\varnothing}}\)</span>. An interesting property of <span class="math inline">\({{\varnothing}}\)</span> is that it is a subset of all other sets.</p></li>
+<li><p>Two sets are equal iff they have the same elements.</p></li>
+</ol>
+<h1 id="ch: Functions">Functions</h1>
+<p>[ch:functions]</p>
+<p>As promised, this chapter discusses functions.</p>
+<p>So, what is a function?</p>
+<p>So far, we’ve been dealing with - like <span class="math inline">\(2\)</span>, <span class="math inline">\({\left\{\,3,2,5\,\right\}}\)</span>, and <span class="math inline">\(90\)</span>. They are static. Static things are fine, but they aren’t very interesting. It’s much more interesting to examine — more specifically, things that change and .</p>
+<p>Enter the <span> ([d-functions])</span>. It’s a mathematical construct. A function takes some input, and maps it to an output. Functions are sometimes referred to as or .</p>
+<p>Let’s look at a simple function, which takes a number and adds <span class="math inline">\(2\)</span> to it</p>
+<p>f :<br />
+f = <span><span> </span> <span>x + 2</span></span></p>
+<p>Pretty simple, right? Okay, so what happens when we send <span class="math inline">\(28\)</span> to <span class="math inline">\(f\)</span>?</p>
+<p><span>rcl</span> <span>f <span>(x=28)</span></span> &amp; = &amp; <span><span> </span> <span>28 + 2</span></span><br />
+&amp; = &amp; 30<br />
+</p>
+<p>Alternatively, since it’s obvious we’re working with <span class="math inline">\(x\)</span>:</p>
+<p><span>rcl</span> <span>f <span>(28)</span></span> &amp; = &amp; 28 + 2<br />
+&amp; = &amp; 30<br />
+</p>
+<p>This highlights an important property of functions: <span> ([d-functions])</span>. If you send a function the same input twice, you should get the same output both times. That is,</p>
+<p><span class="math display">\[a = b \implies {f {\left(a\right)}} = \eva{f}{b}\]</span></p>
+<p>Note that the opposite is not always true:</p>
+<p><span class="math display">\[a = b {\centernot\impliedby}{f {\left(a\right)}} = \eva{f}{b}\]</span></p>
+<p>(If that is true, then the function is ).</p>
+<p>Using the lambda — <span class="math inline">\(\lambda\)</span> — is common when I am using a function without giving it a name. However, usually I will use this notation:</p>
+<p>f :<br />
+<span>f <span>(x)</span></span> = x + 2</p>
+<p>The whole <span class="math inline">\(f : {\mathbb{Z}}\to {\mathbb{Z}}\)</span> thing should be pretty obvious. If not, it means that <span class="math inline">\(f\)</span> is a function that takes a member of <span class="math inline">\({\mathbb{Z}}\)</span> (the whole numbers, both negative and positive), and takes it to another member of <span class="math inline">\({\mathbb{Z}}\)</span>. Other people might use the notation</p>
+<p><span class="math display">\[{\mathbb{Z}}\stackrel{f}{\to} {\mathbb{Z}}\]</span></p>
+<p>That notation is undoubtedly easier to understand. However, as we’ll see, that notation quickly becomes unfeasible.</p>
+<p>With this in mind, if <span class="math inline">\(f : A \to B\)</span>, then <span class="math inline">\(A\)</span> is the of <span class="math inline">\(f\)</span>, written <span class="math inline">\(\dom{f}\)</span>, and <span class="math inline">\(B\)</span> is the of <span class="math inline">\(f\)</span>, written <span class="math inline">\(\codom{f}\)</span>.</p>
+<p>With regard to the function we were just discussing</p>
+<p>f :<br />
+<span>f <span>(x)</span></span> = x + 2</p>
+<p><span class="math inline">\({\mathbb{Z}}\)</span> is both the domain and the codomain. If this is the case, then we say that <span class="math inline">\(f\)</span> is a .<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a> <span class="math inline">\(f\)</span> is “closed under <span class="math inline">\({\mathbb{Z}}\)</span>”, meaning that things can’t use <span class="math inline">\(f\)</span> to escape from <span class="math inline">\({\mathbb{Z}}\)</span>. <span class="math inline">\(f\)</span> is closed.</p>
+<p>If you can’t remember all of these terms, don’t worry, they are all listed in [d-functions].</p>
+<h3 id="ss: Functions with multiple arguments">Functions with multiple arguments</h3>
+<p>Remember my explanation of vectors earlier? If not, vectors are like sets, but order and repetition matter.</p>
+<p>Here’s a function that takes two arguments, and adds them to each other.</p>
+<p>f :<br />
+<span>f <span>(x,y)</span></span> = x + y<br />
+</p>
+<p>Pretty easy to understand, right?</p>
+<p>If you haven’t figured it out from the context, the inputs to the function are called the .</p>
+<p>Here’s a similar function that takes three arguments and adds them to each other</p>
+<p>f :<br />
+<span>f <span>(x,y,z)</span></span> = x + y + z<br />
+</p>
+<p>You can name your function anything you want, same with the arguments (it doesn’t have to be <span class="math inline">\(f\)</span>). It’s just a common convention, which you don’t have to follow.</p>
+<p>Good idea!</p>
+<p>f :<br />
+<span>f <span>(x<sub>1</sub>, x<sub>2</sub>, x<sub>3</sub>, …, x<sub>n</sub>)</span></span> = x<sub>1</sub> + x<sub>2</sub> + x<sub>3</sub> + …+ x<sub>n</sub></p>
+<p>That however isn’t ideal, because we have no guarantee that the arguments in the …are actually integers. How about we have a of integers, and we just take the sum? This has the added benefit of less typing</p>
+<p>f : <span><span>()</span></span><br />
+<span>f <span>(s)</span></span> = s</p>
+<p>So,</p>
+<p><span>rcl</span> <span>f <span>(<span>{1,2,3,4,5}</span>)</span></span> &amp; = &amp; <span>{1,2,3,4,5}</span><br />
+&amp; = &amp; 1 + 2 + 3 + 4 + 5<br />
+&amp; = &amp; 15<br />
+</p>
+<h3 id="ss: Eta-reductions">Eta-reductions</h3>
+<p>Mathematicians like to make themselves look smart. One such way is to invent fancy terms for simple things. One such term is the <span class="math inline">\(\eta\)</span>-reduction.</p>
+<p>Let’s look at that function we just had</p>
+<p>f : <span><span>()</span></span><br />
+<span>f <span>(s)</span></span> = s</p>
+<p>Notice that we are repeating <span class="math inline">\(s\)</span> on both sides of the equation. It would seem much simpler, and just as clear, to write:</p>
+<p>f : <span><span>()</span></span><br />
+f =</p>
+<p>That’s all an <span class="math inline">\(\n\)</span>-reduction is: if you see an extraneous argument, you remove it to make things simpler. As long as we have the signature — the <span class="math inline">\(f : {{\mathbf{Set}}{\left({\mathbb{Z}}\right)}} \to {\mathbb{Z}}\)</span> thing – it’s pretty clear what <span class="math inline">\(f\)</span> does. This is a prime example of mathematicians being both lazy and pretentious at the same time: a practice designed to allow us to be lazier, to which mathematicians have assigned a ridiculous name to make it sound hard.</p>
+<p><span class="math inline">\(\n\)</span> is the Greek letter eta; it’s pronounced “eight-uh”.</p>
+<p>The ancient Greeks were too dumb to comprehend the concept of “eight”. Every time someone brought it up, they said “uh” immediately thereafter. The sound “eight-uh” became so common that they decided to make it a letter.</p>
+<p>The Greeks’ poor comprehension of simple mathematics remains to this day, and is largely the reason for their current financial crisis.<span class="citation" data-cites="w-greek-finance">\cite{w-greek-finance}</span></p>
+<p>If you ever take a physics course, you will undoubtedly notice that Greek letters are used frequently in physics. This is the physicists way of subtly hinting that they actually have no idea what they are talking about, and pleading for help from the mathematicians.</p>
+<h3 id="ss: Other lambda calculi">Other lambda calculi</h3>
+<p>This entire idea where you take simple concepts and make them sound really fancy is called <span> ([d-lambda-calculus])</span>. If you hear people talk about “calculus”, they are talking about something else, not this. Nobody is pretentious enough to actually talk about <span class="math inline">\(\lambda\)</span> calculus.</p>
+<p>Anyway, here’s a brief summary of <span class="math inline">\(\lambda\)</span> calculus. You can find this in [d-lambda-calculus], too. You might want to brush up on your Greek alphabet. I have a nice table of Greek letters in [d-greek-alphabet].</p>
+<dl>
+<dt><span class="math inline">\(\lambda\)</span> abstraction</dt>
+<dd><p>A way to write a function: <span class="math inline">\({\lambda{\left(\,x,y\,\right)} \to} x + y\)</span></p>
+</dd>
+<dt><span class="math inline">\(\alpha\)</span> conversion</dt>
+<dd><p>Changing the names of the arguments. For instance, you can write the above function as</p>
+<p><span class="math display">\[{\lambda{\left(\,a,b\,\right)} \to} a + b\]</span></p>
+</dd>
+<dt><span class="math inline">\(\beta\)</span> reduction</dt>
+<dd><p>Partially calculating a result. For instance</p>
+<p><span class="math display">\[{\lambda{\left(\,2,y\,\right)} \to} 2 + y\]</span></p>
+<p>Can be <span class="math inline">\(\beta\)</span> reduced to</p>
+<p><span class="math display">\[{\lambda{\left(\,y\,\right)} \to} 2 + y\]</span></p>
+</dd>
+<dt><span class="math inline">\(\eta\)</span> conversion</dt>
+<dd><p>Removing or adding extraneous free arguments. The last function</p>
+<p><span class="math display">\[{\lambda{\left(\,2,y\,\right)} \to} 2 + y\]</span></p>
+<p>Can be <span class="math inline">\(\eta\)</span> to</p>
+<p><span class="math display">\[2 +\]</span></p>
+<p>Which could then be <span class="math inline">\(\eta\)</span> to</p>
+<p><span class="math display">\[{\lambda{\left(\,2,\kappa\,\right)} \to} 2 + \kappa\]</span></p>
+</dd>
+</dl>
+<h2 id="s: Currying">Currying</h2>
+<p>We sort of got side-tracked by toying around with sets and making fun of physicists. Hopefully that introduction introduced you to the basic concept of a function, and let you know that they can take multiple arguments</p>
+<p>Let’s look at that function again:</p>
+<p>f :<br />
+<span>f <span>(x,y,z)</span></span> = x + y + z<br />
+</p>
+<p>What if you wanted to bind <span class="math inline">\(x = 3\)</span>, but leave the rest “free”?</p>
+<p>f :<br />
+<span>f <span>(x=3,y,z)</span></span> = 3 + y + z<br />
+</p>
+<p>Okay, cool. We now have another function:</p>
+<p><span>f <span>(3)</span></span> :<br />
+<span>f <span>(3,y,z)</span></span> = 3 + y + z<br />
+</p>
+<p>So, actually, instead of needing 3 integers to do its job, <span class="math inline">\(f\)</span> only needed one. However, instead of spitting out another integer, it spit out a function. So, we could write <span class="math inline">\(f\)</span>’s signature as:</p>
+<p>f : <span>( )</span><br />
+<span>f <span>(x,y,z)</span></span> = x + y + z<br />
+</p>
+<p>Okay, that’s sort of weird and unintuitive. Let’s try writing <span class="math inline">\(f\)</span> differently:</p>
+<p>f : <span>( )</span><br />
+f = <span> </span><span>(<span> </span> x + y + z)</span><br />
+</p>
+<p>Let’s look at the second half of that:</p>
+<p><span> </span> x + y + z :<br />
+</p>
+<p>(This assumes that we know what <span class="math inline">\(x\)</span> is)</p>
+<p>Let’s try splitting this up again:</p>
+<p><span> </span><span>(<span> </span> x + y + z)</span> : <span>()</span><br />
+</p>
+<p>You give this function a value for <span class="math inline">\(y\)</span>, and instead of giving you a value, it gives you another function, hence the signature <span><span class="math inline">\({{\mathbb{Z}}\to {\left({\mathbb{Z}}\to {\mathbb{Z}}\right)}}\)</span></span>.</p>
+<p>Let’s plug this back into <span class="math inline">\(f\)</span>:</p>
+<p>f : <span>()</span><br />
+f = <span> </span><span>(<span> </span><span>(<span> </span> x + y + z)</span> )</span><br />
+</p>
+<p>So, instead of <span class="math inline">\(f\)</span> taking three integers, it now only takes one, but spits out a function, which in turn spits out a function, which spits out an integer.</p>
+<p>This idea of making a function into a chain of functions is called “Currying”.<span class="citation" data-cites="w-currying">\cite{w-currying}</span> It’s named after a dead mathematician named Haskell Curry (ca. 1900-1982), who developed the technique. The programming language Haskell is also named after Mr. Curry.</p>
+<p>Getting back to that function, those parentheses are somewhat burdensome, let’s get rid of them</p>
+<p><span>rcl</span> f &amp; : &amp;<br />
+f &amp; = &amp; <span> </span> <span> </span> <span> </span> x + y + z<br />
+<span>f <span>(x,y,z)</span></span> &amp; = &amp; x + y + z<br />
+</p>
+<p>That’s much easier to read. It should be understood that the parentheses are right-associative: the parentheses “associate” rightward — i.e. it’s <span class="math inline">\(a \to {\left(b \to {\left(c \to d\right)}\right)}\)</span>, not <span class="math inline">\({\left({\left(a \to b\right)} \to c\right)} \to d\)</span>.<span class="citation" data-cites="w-operator-associativity">\cite{w-operator-associativity}</span></p>
+<p>That’s Currying for you.</p>
+<h3 id="ss: Piecewise functions">Piecewise functions</h3>
+<p>[s:piecewise]</p>
+<p>As a random aside, I’m going to introduce you to the . It’s a function whose definition changes based on the input.</p>
+<p>q &amp; : &amp;<br />
+ &amp; <span>:=</span>&amp; {</p>
+<p><span>rcc</span> &amp; &amp;<br />
+ &amp; &amp; <span><span>`</span><span><span>()</span></span></span><br />
+</p>
+<p>.</p>
+<p>Let’s look at <span class="math inline">\(\eva{q}{0}\)</span>: <span class="math inline">\(0\)</span> is even, so <span class="math inline">\(\eva{q}{0} = \frac{0}{2} = 0\)</span>.</p>
+<p>Let’s make a table:</p>
+<p><span class="math display">\[\begin{tabu}{|c|c|c|} \hline
+    x &amp; \eva{q}{x} &amp; \text{$\eva{q}{x}$ reduced}  \\ \hline
+    0 &amp; {0 \div 2}     &amp; 0 \\
+    1 &amp; {{{`}{{\left({{\left(1+1\right)} \div 2}\right)}}}} &amp; {`}1 \\
+    2 &amp; {2 \div 2}     &amp; 1 \\
+    3 &amp; {{{`}{{\left({{\left(3+1\right)} \div 2}\right)}}}} &amp; {`}2 \\
+    4 &amp; {4 \div 2}     &amp; 2 \\
+    5 &amp; {{{`}{{\left({{\left(5+1\right)} \div 2}\right)}}}} &amp; {`}3 \\
+    6 &amp; {6 \div 2}     &amp; 3 \\
+    7 &amp; {{{`}{{\left({{\left(7+1\right)} \div 2}\right)}}}} &amp; {`}4 \\
+    8 &amp; {8 \div 2}     &amp; 4 \\
+    \hline
+  \end{tabu}\]</span></p>
+<p>Hopefully you get this. It’s pretty simple.</p>
+<h3 id="ss: Vocabulary">Vocabulary</h3>
+<p>I’ve been sort of dropping these vocabulary terms throughout the beginning of the chapter. That said, I’ll list them here, so you know where they are. (They’re also in [d-functions]).</p>
+<ol>
+<li><p>All functions are — <span class="math inline">\(a = b \implies {f {\left(a\right)}} = {f {\left(b\right)}}\)</span></p></li>
+<li><p>If <span class="math inline">\(f : A \to B\)</span>, then <span class="math inline">\(A\)</span> is the of <span class="math inline">\(f\)</span> and <span class="math inline">\(B\)</span> is the of <span class="math inline">\(f\)</span>.</p></li>
+<li><p>If <span class="math inline">\(f : A \to B\)</span>, and there are no two distinct elements of <span class="math inline">\(A\)</span> that map to the same thing in <span class="math inline">\(B\)</span>, then <span class="math inline">\(f\)</span> is .</p>
+<p>f : A B<br />
+ <span>;</span>a,b A a b <span>f <span>(a)</span></span> = <span>f <span>(b)</span></span></p></li>
+<li><p>If <span class="math inline">\(f : A \to B\)</span>, then the elements in <span class="math inline">\(B\)</span> that can be expressed as <span class="math inline">\({f {\left(x\right)}}{;\;}x \in A\)</span> form the .</p>
+<p>f : A B<br />
+<span><span><span> <span>()</span></span></span></span><span>f</span> = <span>{<span>f <span>(x)</span></span> B<span>;</span>x A}</span><br />
+</p></li>
+<li><p>If the image of a function is equal to its codomain, then the function is .</p>
+<p>f : A B<br />
+B = <span>{<span>f <span>(x)</span></span> B<span>;</span>x A}</span><br />
+</p></li>
+<li><p>If a function is both injective and surjective, then it is .</p></li>
+<li><p>Some functions have . That is, if <span class="math display">\[f : A \to B\]</span></p>
+<p><span><span><span> <span>()</span></span></span></span><span>f</span> : B A<br />
+<span><span><span> <span>()</span></span></span></span><span>f, x</span> = x <span><span>;</span></span>x A</p>
+<p>Remember that, because of currying, <span class="math inline">\({{{\mathrm{arc} {\left(\right)}}}}{f,x} = {{{{\mathrm{arc} {\left(\right)}}}}{f} {\left(x\right)}}\)</span>. That is:</p>
+<p><span>rcl</span> f &amp; : &amp; A B<br />
+ &amp; : &amp; <span>(A B)</span> B A<br />
+<span><span><span> <span>()</span></span></span></span><span>f</span> &amp; : &amp; B A<br />
+</p>
+<p>If a function has an inverse, it is said to be .</p></li>
+<li><p>If a function is invertible, then the image of the inverse is called the .</p></li>
+</ol>
+<h1 id="ch: More stuff about sets (and functions)">More stuff about sets (and functions)</h1>
+<p>[ch:more-sets]</p>
+<p>By now, you hopefully have some idea into the basic intuition behind sets and functions. Moreover, you’ve proven some cool stuff about them – for instance, you proved that a function is invertible iff it is bijective.</p>
+<p>That’s kind of cool, right? It’s much easier to verify that a function is bijective than it is to find its inverse. So, right off the bat, you can see if a function is invertible without trying to invert it. Despite what you may think, a common problem in math is to find inverse functions.</p>
+<p>Speaking of functions, I’m going to define a really simple function:</p>
+<p>: a a<br />
+<span><span>(x)</span></span> = x</p>
+<p>That function is about as simple as functions get. It’s not a very interesting function, but it’s handy when defining things.</p>
+<p>This is a slightly less simple function, but nonetheless important</p>
+<p>: <span>(a b c)</span> b a c<br />
+ =</p>
+<p>It takes a function, <span class="math inline">\(f\)</span>, which takes an <span class="math inline">\(a\)</span> and a <span class="math inline">\(b\)</span>, and then returns another function with the arguments flipped. You won’t usually see <span class="math inline">\(\eva{{\mathrm{flip}}}{{\lambda{\left(\,x, y\,\right)} \to} x-y, 3, 5}\)</span> floating around. Instead</p>
+<p><span>rcl</span> f &amp; : &amp; p q r<br />
+ &amp; : &amp; q p r<br />
+</p>
+<p>Here’s an infix operator:</p>
+<p>: <span>(b c)</span> <span>(a b)</span> a c<br />
+ =</p>
+<p>We’re going to look at some more stuff with sets.</p>
+<h2 id="s: Set subtraction">Set subtraction</h2>
+<p>First off, we have “set subtraction”. This is sometimes called the “relative complement”.</p>
+<p><span class="math display">\[P \setminus Q = {\left\{\,x \in P {;\;}x \notin Q\,\right\}}\]</span></p>
+<p><span class="math inline">\(P \bs Q\)</span> is all of the elements in <span class="math inline">\(P\)</span> that are not in <span class="math inline">\(Q\)</span>.</p>
+<p><span><img src="setminus.png" title="fig:" alt="Set subtraction" /></span></p>
+<p>What would <span class="math inline">\(P \bs P\)</span> be, then? Well, <span class="math inline">\({{\varnothing}}\)</span>, of course, right!</p>
+<p><span class="math display">\[P \setminus P = {\left\{\,x \in P {;\;}x \notin P\,\right\}} = {{\varnothing}}\]</span></p>
+<p>Well, that looks like a contradiction, doesn’t it? Well, sort of. It’s a contradiction if you assume that <span class="math inline">\(P\)</span> is nonempty — if you assume that there is some element in <span class="math inline">\(P\)</span> — if an element is both in <span class="math inline">\(P\)</span> and not in <span class="math inline">\(P\)</span>, that would be madness! But, if you realize that the comprehension is the “set of objects satisfying the condition”, then you don’t encounter a contradiction. <span class="math inline">\(P \setminus P\)</span> is the set of all objects in <span class="math inline">\(P\)</span> that are not in <span class="math inline">\(P\)</span>: there are no elements satisfying this condition, thus <span class="math inline">\(P \bs P \equiv {{\varnothing}}\)</span>.</p>
+<p>explains this idea graphically.</p>
+<h3 id="ss: Complement">Complement</h3>
+<p>If <span class="math inline">\(P {\subset}{\mathscr{A}}\)</span>, then <span class="math inline">\({\mathscr{A}}\setminus P\)</span> is called the “ of <span class="math inline">\(P\)</span> with respect to <span class="math inline">\({\mathscr{A}}\)</span>”. Yes, that’s complment with an ’e’, not complment, with an ’i’.</p>
+<p>I drew another diagram to illustrate the complement in [fig:complement].</p>
+<p><span><img src="venn-complement-2.png" title="fig:" alt="The complement, illustrated graphically. I tried to draw an {\mathscr{A}} in the upper right corner. It turned out terribly." /></span></p>
+<p>In these exercises, you are going to prove every identity there is about sets.</p>
+<h2 id="s: Cartesian products">Cartesian products</h2>
+<p>The next thing we need to go over is a - it’s basically a way to double up on a set. So, say we have a set <span class="math inline">\(A\)</span>, and another set <span class="math inline">\(B\)</span>, the Cartesian product is the set of all 2-vectors, where the first element is from <span class="math inline">\(A\)</span>, and the second element is from <span class="math inline">\(B\)</span>.</p>
+<p>: <span>a</span> <span>b</span> <span>a,b</span><br />
+A B <span>:=</span><span>{ x A y B}</span><br />
+</p>
+<p>It’s the class of all pairs of the elements in either set. It is actually a set, too, but I haven’t taught you enough to prove that. I also haven’t taught you what a class is. So, for the time being, know that the Cartesian product produces a set, but at the same time you don’t know that.</p>
+<p>Let’s see some examples!</p>
+<p><span>rccl</span> <span>{1,2,3}</span> <span>{4,5,6}</span> &amp; = &amp; { &amp;<br />
+&amp; &amp; , &amp;<br />
+&amp; &amp; , &amp;<br />
+&amp; &amp; , &amp;<br />
+&amp; &amp; , &amp;<br />
+&amp; &amp; , &amp;<br />
+&amp; &amp; , &amp;<br />
+&amp; &amp; , &amp;<br />
+&amp; &amp; , &amp;<br />
+&amp; &amp; } &amp;<br />
+</p>
+<p>Alright, remember earlier when I told you to install Haskell? Well, if you didn’t, do it now: [intro-idris].</p>
+<p>GHCi, version 7.8.4: https://www.haskell.org/ghc/ :? for help Loading package ghc-prim ... linking ... done. Loading package integer-gmp ... linking ... done. Loading package base ... linking ... done. Prelude&gt;</p>
+<p>GHCi is the Glasgow Haskell Compiler, interactive. It’s an interactive interpreter for Haskell.</p>
+<p>If you want to change your prompt to something other than <span><span>Prelude&gt;</span></span>, then write something like this:</p>
+<p>Prelude&gt; :set prompt “ghci: ” ghci:</p>
+<p>If you want to do this permanently, add <span><span>:set prompt “ghci: ”</span></span> to .</p>
+<p>I didn’t just have you open up GHCi for no good reason. It’s really easy to play with these Cartesian products in GHCi. This way, you can experiment.</p>
+<p>Remember the definition of the Cartesian product:</p>
+<p><span class="math display">\[A \times B {:=}{\left\{\,\mvec{x,y} \st x \in A \land y \in B\,\right\}}\]</span></p>
+<p>Let’s try that example out. Math doesn’t directly translate into Haskell. Some of the syntax is a bit different.</p>
+<p>ghci: [(a,b) | a &lt;- [1,2,3], b &lt;- [4,5,6]] [(1,4),(1,5),(1,6),(2,4),(2,5),(2,6),(3,4),(3,5),(3,6)] it :: (Num t1, Num t) =&gt; [(t, t1)]</p>
+<p>That last line probably doesn’t show up for you. It’s just telling us the type of our expression. To have it show up automatically for you, run <span><span>:set +t</span></span>, or add it to .</p>
+<p>There are a number of ways to actually work out the mechanics of the product. The simplest, and easiest way, is through . So, let’s go over the mechanics of <span class="math inline">\({\left\{\,1,2,3\,\right\}} \times {\left\{\,4,5,6\,\right\}}\)</span>. You take the first element of the first set, in this case, <span class="math inline">\(1\)</span>, and take the Cartesian product of <span class="math inline">\({\left\{\,1\,\right\}}\)</span> and <span class="math inline">\({\left\{\,4,5,6\,\right\}}\)</span>:</p>
+<p><span class="math display">\[{\left\{\,1\,\right\}} \times {\left\{\,4,5,6\,\right\}} =
+{\left\{\,
+  \mvec{1,4},
+  \mvec{1,5},
+  \mvec{1,6}
+\,\right\}}\]</span></p>
+<p>That’s unreadable</p>
+<p><span>rccc</span> <span>{1}</span> <span>{4,5,6}</span> &amp; = &amp; { &amp;<br />
+&amp; &amp; , &amp;<br />
+&amp; &amp; , &amp;<br />
+&amp; &amp; } &amp;</p>
+<p>Pretty easy. Then you do the same thing with the second element.</p>
+<p><span>rccc</span> <span>{2}</span> <span>{4,5,6}</span> &amp; = &amp; { &amp;<br />
+&amp; &amp; , &amp;<br />
+&amp; &amp; , &amp;<br />
+&amp; &amp; } &amp;</p>
+<p>You guessed it!</p>
+<p><span>rccc</span> <span>{3}</span> <span>{4,5,6}</span> &amp; = &amp; { &amp;<br />
+&amp; &amp; , &amp;<br />
+&amp; &amp; , &amp;<br />
+&amp; &amp; } &amp;</p>
+<p>Then you take the union:</p>
+<p><span>rcccc</span> <span>{1,2,3}</span> <span>{4,5,6}</span> &amp; = &amp; &amp; { &amp; <span>{1}</span> <span>{4,5,6}</span>,<br />
+&amp; &amp; &amp; , &amp; <span>{2}</span> <span>{4,5,6}</span>,<br />
+&amp; &amp; &amp; , &amp; <span>{3}</span> <span>{4,5,6}</span>,<br />
+&amp; &amp; &amp; } &amp;<br />
+</p>
+<p>I’m going to have to display the intermediate result in a separate thing, because it’s just awful if I try to smush it in with the rest:</p>
+<p><span class="math display">\[{\begin{array}{cc}
+    \{ &amp; \mvec{{1},4} \\
+     , &amp; \mvec{{1},5} \\                                                                                       
+     , &amp; \mvec{{1},6} \\                                                                                       
+    \} &amp;               \\
+  \end{array}} \bigcup
+{\begin{array}{cc}
+    \{ &amp; \mvec{{2},4} \\
+     , &amp; \mvec{{2},5} \\                                                                                       
+     , &amp; \mvec{{2},6} \\                                                                                       
+    \} &amp;               \\
+  \end{array}} \bigcup
+{\begin{array}{cc}
+    \{ &amp; \mvec{{3},4} \\
+     , &amp; \mvec{{3},5} \\                                                                                       
+     , &amp; \mvec{{3},6} \\                                                                                       
+    \} &amp;               \\
+  \end{array}}\]</span></p>
+<p>Which evaluates to</p>
+<p><span>rccl</span> <span>{1,2,3}</span> <span>{4,5,6}</span> &amp; = &amp; { &amp;<br />
+&amp; &amp; , &amp;<br />
+&amp; &amp; , &amp;<br />
+&amp; &amp; , &amp;<br />
+&amp; &amp; , &amp;<br />
+&amp; &amp; , &amp;<br />
+&amp; &amp; , &amp;<br />
+&amp; &amp; , &amp;<br />
+&amp; &amp; , &amp;<br />
+&amp; &amp; } &amp;<br />
+</p>
+<p>Okay, great. I hope you understand this so far. What happens when we take the product of a set with itself?</p>
+<p><span>rccl</span> <span>{1,2,3}</span> <span>{1,2,3}</span> &amp; = &amp; { &amp;<br />
+&amp; &amp; , &amp;<br />
+&amp; &amp; , &amp;<br />
+&amp; &amp; , &amp;<br />
+&amp; &amp; , &amp;<br />
+&amp; &amp; , &amp;<br />
+&amp; &amp; , &amp;<br />
+&amp; &amp; , &amp;<br />
+&amp; &amp; , &amp;<br />
+&amp; &amp; } &amp;<br />
+</p>
+<p>The Cartesian product of a set <span class="math inline">\(A\)</span> with itself is usually denoted <span class="math inline">\(A^2\)</span> instead of <span class="math inline">\(A \times A\)</span>. Like I said, we like to be lazy.</p>
+<h2 id="s: Function plots">Function plots</h2>
+<p>Okay, so, here’s something that doesn’t really fit in anywhere else. Now that you know what Cartesian products are, as well as vectors, I can introduce you to the . Basically, it’s a graphical representation of <span class="math inline">\({\mathbb{R}}\times {\mathbb{R}}\)</span>:</p>
+<p><span><embed src="{VectorGraph1.png}" /></span></p>
+<p>I also put some vectors on there. That looks really crappy, let me draw that with a computer real quick:</p>
+<p><span><embed src="{VectorGraph2.png}" /></span></p>
+<p>The source code for that graph is in [src:vg2].</p>
+<p>As far as conventions go, you always list the horizontal coordinate first, and the vertical coordinate second. Usually, the horizontal axis is labeled the <span class="math inline">\(x\)</span>-axis, and the vertical axis is labeled the <span class="math inline">\(y\)</span>-axis. Hence, the convention is to denote vectors on the plane as <span class="math inline">\(\mvec{x,y}\)</span></p>
+<p>Okay, so given <span class="math inline">\(A \times B\)</span>, a point <span class="math inline">\(\mvec{x,y}\)</span> on the Cartesian coordinate plane represents the vector <span class="math inline">\(\mvec{x,y}\)</span>, where <span class="math inline">\(x \in A\)</span>, <span class="math inline">\(y \in B\)</span>. With <span class="math inline">\({\mathbb{R}}\)</span>, a point <span class="math inline">\(\mvec{x, y}\)</span> on the plane is the vector <span class="math inline">\(\mvec{x,y} \in {\mathbb{R}}^2\)</span></p>
+<p>So, how do we plot a function? Well, basically, given a function <span class="math inline">\(f : A \to B\)</span>, you plot <span class="math inline">\(\mvec{x, \eva{f}{x}} \in A \times B\)</span>.</p>
+<p>You plot the domain on the <span class="math inline">\(x\)</span>-axis, and the codomain on the <span class="math inline">\(y\)</span>-axis. You put the input value as the horizontal coordinate, and the output value as the <span class="math inline">\(y\)</span>-coordinate.</p>
+<p>For instance:</p>
+<p><span class="math display">\[{\left({\lambda{\left(\,x\,\right)} \to} x^2\right)} : {\mathbb{R}}\to {\mathbb{R}}\]</span></p>
+<p><span><embed src="{x-squared-curve.png}" /></span></p>
+<p>The source is in [src:x-squared].</p>
+<p>Go to some point on the <span class="math inline">\(x\)</span>-axis. Then go upwards from there until you hit the line. Let’s start with <span class="math inline">\(8\)</span>. Find <span class="math inline">\(8\)</span> on the <span class="math inline">\(x\)</span>-axis, then go up from there until you get to the line. If you look, the vertical coordinate of the line at that point is <span class="math inline">\(64\)</span>, which is the square of <span class="math inline">\(8\)</span>. That’s kind of cool.</p>
+<h2 id="s: The work of Georg Cantor">The work of Georg Cantor</h2>
+<p>Without further ado, we’re going to look at Georg Cantor’s work. Georg Cantor, if you remember from [ch:sets], is the guy who first studied sets. He came up with some bizzarre results.</p>
+<p>First of all, long before Cantor, another guy, of whom you’ve likely heard, Galileo Galilei, came up with a paradox. Galileo Galilei is usually mononymously referred to as Galileo, mostly because it’s easier to type. Galileo is most famous for championing the idea that the earth revolves around the sun, and not the other way around. He spent his last days under house arrest because he believed that. Seventeenth century Italy didn’t really have the same free speech protections found today in the first world.</p>
+<p>Anyway, I digress. Aside from his amazing work in physics, Galileo was among the first to point out an interesting fact about <span class="math inline">\({\mathbb{N}}\)</span>: there are as many perfect squares as there are natural numbers.<span class="citation" data-cites="expeditions">\cite{expeditions}</span> That’s weird, because the perfect squares are a subset of the natural numbers.</p>
+<p><span>ccccccc</span> 1 &amp; 2 &amp; 3 &amp; 4 &amp; …&amp; n &amp; …<br />
+&amp; &amp; &amp; &amp; &amp; &amp;<br />
+1 &amp; 4 &amp; 9 &amp; 16 &amp; …&amp; n<sup>2</sup> &amp; …<br />
+</p>
+<p>To be fair, Galileo wasn’t the first person to come up with this paradox, he was just among the first. He was the most famous person to come up with this paradox, hence why it’s named after him.<span class="citation" data-cites="w-galileo-paradox">\cite{w-galileo-paradox}</span></p>
+<p>So, back to the real world: despite being a subset, the infinite set of perfect squares has as many elements as the infinite superset of natural numbers. Galileo decided that the only solution was to not consider words like “larger” or “smaller” when discussing infinite sets. Eventually, mathematicians started talking about “larger” and “smaller” in the context of infinite sets, just not the way Galileo would have.</p>
+<p>If you want to look at this another way, we’ve found a bijection</p>
+<p>f : <span>{x y x = y<sup>2</sup>}</span><br />
+ <span>:=</span>x<sup>2</sup><br />
+</p>
+<p>Galileo, and later Cantor, decided that two sets have the same number of elements if there exists a bijection between them. Instead of saying “have the same number of elements”, we instead say “have the same cardinality”.</p>
+<p>So, <span class="math inline">\({\left\{\,1,2,3\,\right\}}\)</span> has the same cardinality as <span class="math inline">\({\left\{\,4,5,6\,\right\}}\)</span>, because there’s a bijective relation between them.</p>
+<p><span class="math display">\[{\left({\lambda{\left(\,x\,\right)} \to} x + 3\right)} : {\left\{\,1,2,3\,\right\}} \to {\left\{\,4,5,6\,\right\}}\]</span></p>
+<p>If two sets are finite, as is the case with the previous example, their cardinality is just the number of elements. So, the cardinality of <span class="math inline">\({\left\{\,1,2,3\,\right\}}\)</span> is just <span class="math inline">\(3\)</span>. If two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have the same cardinality, then I’m going to write <span class="math inline">\(A {\stackrel{\mathrm{c}}{=}}B\)</span>, which you should read as “<span class="math inline">\(A\)</span> is cardinally equal to <span class="math inline">\(B\)</span>”.</p>
+<p>Do you remember that example function from [s:piecewise]?</p>
+<p>q &amp; : &amp;<br />
+ &amp; <span>:=</span>&amp; {</p>
+<p><span>rcc</span> &amp; &amp;<br />
+ &amp; &amp; <span><span>`</span><span><span>()</span></span></span><br />
+</p>
+<p>.</p>
+<p><span class="math display">\[\begin{tabu}{|c|c|c|} \hline
+    x &amp; \eva{q}{x} &amp; \text{$\eva{q}{x}$ reduced}  \\ \hline
+    0 &amp; {0 \div 2}     &amp; 0 \\
+    1 &amp; {{{`}{{\left({{\left(1+1\right)} \div 2}\right)}}}} &amp; {`}1 \\
+    2 &amp; {2 \div 2}     &amp; 1 \\
+    3 &amp; {{{`}{{\left({{\left(3+1\right)} \div 2}\right)}}}} &amp; {`}2 \\
+    4 &amp; {4 \div 2}     &amp; 2 \\
+    5 &amp; {{{`}{{\left({{\left(5+1\right)} \div 2}\right)}}}} &amp; {`}3 \\
+    6 &amp; {6 \div 2}     &amp; 3 \\
+    7 &amp; {{{`}{{\left({{\left(7+1\right)} \div 2}\right)}}}} &amp; {`}4 \\
+    8 &amp; {8 \div 2}     &amp; 4 \\
+    \hline
+  \end{tabu}\]</span></p>
+<p>Wait wait wait!!!!! That’s a bijection! Holy crap! So <span class="math inline">\({\mathbb{N}}{\stackrel{\mathrm{c}}{=}}{\mathbb{Z}}\)</span>! That’s interesting! Again, despite <span class="math inline">\({\mathbb{N}}{\subset}{\mathbb{Z}}\)</span>, <span class="math inline">\({\mathbb{N}}{\stackrel{\mathrm{c}}{=}}{\mathbb{Z}}\)</span>. That’s kind of cool.</p>
+<p>Let’s plot that function:</p>
+<p><span><embed src="{nz-bijection.png}" /></span></p>
+<p>Well that’s a bit hard to follow. Let’s draw a dotted line between each successive point:</p>
+<p><span><embed src="{nz-bijection-joined.png}" /></span></p>
+<p>Okay. Please note that since <span class="math inline">\(q : {\mathbb{N}}\to {\mathbb{Z}}\)</span>, there aren’t intermediate values. The function only exists at the blue points. That is, you can’t evaluate <span class="math inline">\(\eva{q}{2.5}\)</span>, because <span class="math inline">\(2.5 \notin N\)</span>.</p>
+<p>Anyway, the point is, we are able to enumerate through the values of <span class="math inline">\({\mathbb{Z}}\)</span>, the same way we can with <span class="math inline">\({\mathbb{N}}\)</span>. We’ve found a bijection <span class="math inline">\(q : {\mathbb{N}}\to {\mathbb{Z}}\)</span>, therefore <span class="math inline">\({\mathbb{N}}= {\mathbb{Z}}\)</span>.</p>
+<p>The cardinality of <span class="math inline">\({\mathbb{N}}\)</span> (and also <span class="math inline">\({\mathbb{Z}}\)</span>) is called <span class="math inline">\({\aleph_0}\)</span>, pronounced “aleph-null”. <span class="math inline">\(\aleph\)</span> is the first letter of the Hebrew alphabet, called “aleph”.<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a></p>
+<h3 id="ss: The cardinality of irrational numbers">The cardinality of irrational numbers</h3>
+<p>What about <span class="math inline">\({\mathbb{I}}\)</span>? <span class="math inline">\({\mathbb{I}}\)</span> is seemingly more infinite than <span class="math inline">\({\mathbb{N}}\)</span>. <span class="math inline">\({\mathbb{N}}\)</span> and <span class="math inline">\({\mathbb{Z}}\)</span> are discrete sets: it’s pretty easy to enumerate through them. <span class="math inline">\({\mathbb{I}}\)</span> is continuous though. Between any two values, there’s always an infinity of more values.</p>
+<p>Let’s, for fun, try to list every single irrational number. If we can list every irrational number, then we must be able to enumerate through them, which would mean that <span class="math inline">\({\mathbb{N}}{\stackrel{\mathrm{c}}{=}}{\mathbb{I}}\)</span></p>
+<p>1.714761022369152... 4.008668726427755... 1.566116992594829... 1.519257059116716... 5.011643808251281... 6.533800807168559... 9.838685190958348... 3.424290398329045... 5.065089480002634... 6.972994377235255... 7.763147189141261... 8.374868221801194... 2.901203914856270... 9.734153197637937... 1.163373088314136... 1.489918657733841... 1.775506328996835... ...</p>
+<p>I have to do it <span><span>in monospace</span></span> so that everything is aligned, sorry. Okay, let’s take the first number, <span><span>1.714761022369152...</span></span>, and subtract <span class="math inline">\(1\)</span> from its first digit: <span><span>0.714761022369152...</span></span>. Okay, easy enough</p>
+<p>Let’s do the same thing to the second number, with the second digit:</p>
+<p><span><span>4.008668726427755...</span></span> oops! It’s a <span class="math inline">\(0\)</span>. Well, let’s just make it cyclic - i.e. <span class="math inline">\(0 - 1 \cong 9\)</span>.</p>
+<p>So, we have <span><span>4.008668726427755... –&gt; 4.908668726427755...</span></span></p>
+<p>Let’s list what we have so far</p>
+<p>1.714761022369152... -&gt; 0.714761022369152... 4.008668726427755... -&gt; 4.908668726427755... 1.566116992594829... 1.519257059116716... 5.011643808251281... 6.533800807168559... 9.838685190958348... 3.424290398329045... 5.065089480002634... 6.972994377235255... 7.763147189141261... 8.374868221801194... 2.901203914856270... 9.734153197637937... 1.163373088314136... 1.489918657733841... ...</p>
+<p>0.9</p>
+<p>So, for the <span class="math inline">\(n\)</span>th number on the list, we change the <span class="math inline">\(n\)</span>th digit. We’re also going to take the output of the flipping process, and list it in a new number at bottom. Let’s do this to a few more numbers, so you get the hang of it. I’m also going to add a space around the number I changed, to make it more obvious</p>
+<p>1 .714761022369152... -&gt; 0 .714761022369152... 4. 0 08668726427755... -&gt; 4. 9 08668726427755... 1.5 6 6116992594829... -&gt; 1.5 5 6116992594829... 1.51 9 257059116716... -&gt; 1.51 8 257059116716... 5.011 6 43808251281... -&gt; 5.011 5 43808251281... 6.5338 0 0807168559... -&gt; 6.5338 9 0807168559... 9.83868 5 190958348... -&gt; 3.424290 3 98329045... -&gt; 5.0650894 8 0002634... -&gt; 6.97299437 7 235255... -&gt; 7.763147189 1 41261... -&gt; 8.3748682218 0 1194... -&gt; 2.90120391485 6 270... -&gt; 9.734153197637 9 37... -&gt; 1.1633730883141 3 6... -&gt; ... 0.95849</p>
+<p>Okay, you’re getting this! I’m sure you can figure out what the rest are:</p>
+<p>1.714761022369152... -&gt; 0.714761022369152... 4. 0 08668726427755... -&gt; 4. 9 08668726427755... 1.5 6 6116992594829... -&gt; 1.5 5 6116992594829... 1.51 9 257059116716... -&gt; 1.51 8 257059116716... 5.011 6 43808251281... -&gt; 5.011 5 43808251281... 6.5338 0 0807168559... -&gt; 6.5338 9 0807168559... 9.83868 5 190958348... -&gt; 9.83868 4 190958348... 3.424290 3 98329045... -&gt; 3.424290 2 98329045... 5.0650894 8 0002634... -&gt; 5.0650894 7 0002634... 6.97299437 7 235255... -&gt; 6.97299437 6 235255... 7.763147189 1 41261... -&gt; 7.763147189 0 41261... 8.3748682218 0 1194... -&gt; 8.3748682218 9 1194... 2.90120391485 6 270... -&gt; 2.90120391485 5 270... 9.734153197637 9 37... -&gt; 9.734153197637 8 37... 1.1633730883141 3 6... -&gt; 1.1633730883141 2 6... ... 0.95849427609582 ? ... -&gt; 0.95849427609582 ? ...</p>
+<p>Wait wait wait! We’ve made a new irrational number that’s different from all of the other numbers in at least 1 digit, right? It’s different from the first number in its first digit, it’s different from the second number in its second digit, and so on.</p>
+<p>So, if we theoretically list all of the irrational numbers, in some sort of order, we can still make another irrational number that’s different than each of them by at least one digit. Thus, it’s impossible to list every single irrational number, because there’s always another one!</p>
+<p>You can make the same argument for <span class="math inline">\({\mathbb{N}}\)</span>, sort of. There’s always another natural number, but it goes after all of the previous ones. With the irrational numbers, we can always make a new irrational number that goes somewhere in the middle of the set.</p>
+<p>It’s like if there was a long line to get tickets for a football game. Every second, there’s a new person coming. With <span class="math inline">\({\mathbb{N}}\)</span> and <span class="math inline">\({\mathbb{Z}}\)</span>, you can just stick the new person at the end of the line. With <span class="math inline">\({\mathbb{I}}\)</span>, however, you can’t just stick the new person at the end, you have to put him at a definite spot in the middle.</p>
+<p>When the ticket booth person needs to help the next person, it’s impossible to determine who to help next, because every second there’s a new person getting stuck in front of the person first in line. You can’t take down the names of the first 20 people in line, because there’s no concept of counting with the irrational numbers. That concept exists with the natural numbers. <span class="math inline">\(\aleph_0\)</span> is defined by being “countably infinite” - <span class="math inline">\({\mathbb{I}}\)</span> is not countably infinite; it’s its own type of infinite.</p>
+<p>So <span class="math inline">\({\mathbb{I}}{\stackrel{\mathrm{c}}{&gt;}}{\mathbb{N}}\)</span>!</p>
+<p>Because <span class="math inline">\({\mathbb{R}}{\supset}{\mathbb{I}}\)</span>, it’s not possible that <span class="math inline">\({\mathbb{R}}\)</span> is countably infinite. There’s a part of <span class="math inline">\({\mathbb{R}}\)</span> that you can’t count, so you can’t count all of <span class="math inline">\({\mathbb{R}}\)</span>. Pretty simple:</p>
+<h3 id="ss: Rational numbers">Rational numbers</h3>
+<p>Here’s where it gets interesting. If you remember, <span class="math inline">\({\mathbb{Q}}\)</span>, the rational numbers, is all numbers that can be written as a ratio of <span class="math inline">\(\frac{x}{y}\)</span>, where <span class="math inline">\(x,y \in {\mathbb{Z}}, y \ne 0\)</span>. Incidentially, they are also numbers that follow some sort of pattern.</p>
+<p>Well, that definition looks sort of familiar: What if we wrote <span class="math inline">\({\mathbb{Q}}\)</span> this way:</p>
+<p><span class="math display">\[{\mathbb{Q}}= {\mathbb{Z}}\times {\left({\mathbb{Z}}\bs {\left\{\,0\,\right\}}\right)}\]</span></p>
+<p>Where <span class="math inline">\(\mvec{x,y} \in {\mathbb{Z}}\times {\left({\mathbb{Z}}\bs {\left\{\,0\,\right\}}\right)}\)</span> maps to the fraction <span class="math inline">\(\frac{x}{y}\)</span>.</p>
+<p>We’ve done Cartesian coordinate planes of <span class="math inline">\({\mathbb{R}}^2\)</span> and <span class="math inline">\({\mathbb{N}}\times {\mathbb{Z}}\)</span>. Is there any reason we can’t do one of <span class="math inline">\({\mathbb{Z}}\times {\left({\mathbb{Z}}\bs {\left\{\,0\,\right\}}\right)}\)</span>?</p>
+<p>Well, of course not!</p>
+<p><span><embed src="{nq-bijection-nolines.png}" /></span></p>
+<p>Every blue dot at some point <span class="math inline">\(\mvec{x,y}\)</span> represents the fraction <span class="math inline">\(\frac{x}{y}\)</span>. So, the dot at <span class="math inline">\(\mvec{1,3}\)</span> represents the fraction <span class="math inline">\(\frac{1}{3}\)</span>. Note that there are no points on the line <span class="math inline">\(y = 0\)</span>, because you can’t divide by zero.</p>
+<p>So, can we enumerate through those? That is, follow some pattern that will eventually encapsulate every rational number? There’s no harm in trying!</p>
+<p>The naïve way to do it would be to just head in one direction until you stop.</p>
+<p><span><embed src="{nq-bijection-naive.png}" /></span></p>
+<p>Of course, you never stop, so this won’t work.</p>
+<p>With the <span class="math inline">\({\mathbb{N}}\to {\mathbb{Z}}\)</span> bijection, we sort of doubled back on ourselves:</p>
+<p><span><embed src="{nz-bijection-joined.png}" /></span></p>
+<p>Maybe let’s try that with this:</p>
+<p><span><embed src="{nq-bijection.png}" /></span></p>
+<p>Hey! That works. If we keep going, we’ll enumerate through <span class="math inline">\({\mathbb{Q}}\)</span>! So <span class="math inline">\({\mathbb{Q}}{\stackrel{\mathrm{c}}{=}}{\mathbb{N}}\)</span>!</p>
+<h2 id="s: Okay, that&#39;s great. What the hell is that function?">Okay, that’s great. What the hell is that function?</h2>
+<p>Well, to be honest, I’m not sure. I wrote the script to generate the graph by doing some very shoddy programming, but I don’t know the associated function. How about, as an, um, exercise, I explain my logic?</p>
+<p>Let’s look at that graph again:</p>
+<p><span><embed src="{nq-bijection.png}" /></span></p>
+<p>Let’s call the hypothetical function that defines that bijection <span class="math inline">\(r\)</span></p>
+<p><span class="math display">\[r : {\mathbb{N}}\to {\mathbb{Q}}\]</span></p>
+<p>First of all, we start at the coordinate <span class="math inline">\(\mvec{0,1}\)</span>. So we can write</p>
+<p><span class="math display">\[\eva{r}{0} {:=}\mvec{0,1}\]</span></p>
+<h2 id="s: Conclusion">Conclusion</h2>
+<p>These are the bizarre results Cantor found, which his colleagues refused to believe.</p>
+<p>The method I used to prove that <span class="math inline">\({\mathbb{I}}\)</span> was uncountable is called “Cantor’s diagonal argument”. He had proven years beforehand that <span class="math inline">\({\mathbb{I}}{\stackrel{\mathrm{c}}{&gt;}}{\mathbb{N}}\)</span>, using a completely different method. The diagonal method is much more approachable, so I used that instead.</p>
+<p>More importantly, you can use the diagonal argument in a variety of different ways. The most interesting such way is Russell’s paradox, which I’ll get to in the next chapter.</p>
+<p>The conclusion to draw from this section is:</p>
+<blockquote>
+<p>All infinite sets are infinite, but some are more infinite than others.</p>
+<p>– George Orwell</p>
+</blockquote>
+<h1 id="gnu-free-documentation-license">GNU Free Documentation License</h1>
+<p>[gfdl]</p>
+<p>Version 1.3, 3 November 2008</p>
+<p>Copyright © 2000, 2001, 2002, 2007, 2008 Free Software Foundation, Inc.</p>
+<p><code>&lt;https://fsf.org/&gt;</code></p>
+<p>Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.</p>
+<p><span><strong>Preamble</strong></span></p>
+<p>The purpose of this License is to make a manual, textbook, or other functional and useful document “free” in the sense of freedom: to assure everyone the effective freedom to copy and redistribute it, with or without modifying it, either commercially or noncommercially. Secondarily, this License preserves for the author and publisher a way to get credit for their work, while not being considered responsible for modifications made by others.</p>
+<p>This License is a kind of “copyleft”, which means that derivative works of the document must themselves be free in the same sense. It complements the GNU General Public License, which is a copyleft license designed for free software.</p>
+<p>We have designed this License in order to use it for manuals for free software, because free software needs free documentation: a free program should come with manuals providing the same freedoms that the software does. But this License is not limited to software manuals; it can be used for any textual work, regardless of subject matter or whether it is published as a printed book. We recommend this License principally for works whose purpose is instruction or reference.</p>
+<p><strong>1. APPLICABILITY AND DEFINITIONS</strong></p>
+<p>This License applies to any manual or other work, in any medium, that contains a notice placed by the copyright holder saying it can be distributed under the terms of this License. Such a notice grants a world-wide, royalty-free license, unlimited in duration, to use that work under the conditions stated herein. The “<strong>Document</strong>”, below, refers to any such manual or work. Any member of the public is a licensee, and is addressed as “<strong>you</strong>”. You accept the license if you copy, modify or distribute the work in a way requiring permission under copyright law.</p>
+<p>A “<strong>Modified Version</strong>” of the Document means any work containing the Document or a portion of it, either copied verbatim, or with modifications and/or translated into another language.</p>
+<p>A “<strong>Secondary Section</strong>” is a named appendix or a front-matter section of the Document that deals exclusively with the relationship of the publishers or authors of the Document to the Document’s overall subject (or to related matters) and contains nothing that could fall directly within that overall subject. (Thus, if the Document is in part a textbook of mathematics, a Secondary Section may not explain any mathematics.) The relationship could be a matter of historical connection with the subject or with related matters, or of legal, commercial, philosophical, ethical or political position regarding them.</p>
+<p>The “<strong>Invariant Sections</strong>” are certain Secondary Sections whose titles are designated, as being those of Invariant Sections, in the notice that says that the Document is released under this License. If a section does not fit the above definition of Secondary then it is not allowed to be designated as Invariant. The Document may contain zero Invariant Sections. If the Document does not identify any Invariant Sections then there are none.</p>
+<p>The “<strong>Cover Texts</strong>” are certain short passages of text that are listed, as Front-Cover Texts or Back-Cover Texts, in the notice that says that the Document is released under this License. A Front-Cover Text may be at most 5 words, and a Back-Cover Text may be at most 25 words.</p>
+<p>A “<strong>Transparent</strong>” copy of the Document means a machine-readable copy, represented in a format whose specification is available to the general public, that is suitable for revising the document straightforwardly with generic text editors or (for images composed of pixels) generic paint programs or (for drawings) some widely available drawing editor, and that is suitable for input to text formatters or for automatic translation to a variety of formats suitable for input to text formatters. A copy made in an otherwise Transparent file format whose markup, or absence of markup, has been arranged to thwart or discourage subsequent modification by readers is not Transparent. An image format is not Transparent if used for any substantial amount of text. A copy that is not “Transparent” is called “<strong>Opaque</strong>”.</p>
+<p>Examples of suitable formats for Transparent copies include plain ASCII without markup, Texinfo input format, LaTeX input format, SGML or XML using a publicly available DTD, and standard-conforming simple HTML, PostScript or PDF designed for human modification. Examples of transparent image formats include PNG, XCF and JPG. Opaque formats include proprietary formats that can be read and edited only by proprietary word processors, SGML or XML for which the DTD and/or processing tools are not generally available, and the machine-generated HTML, PostScript or PDF produced by some word processors for output purposes only.</p>
+<p>The “<strong>Title Page</strong>” means, for a printed book, the title page itself, plus such following pages as are needed to hold, legibly, the material this License requires to appear in the title page. For works in formats which do not have any title page as such, “Title Page” means the text near the most prominent appearance of the work’s title, preceding the beginning of the body of the text.</p>
+<p>The “<strong>publisher</strong>” means any person or entity that distributes copies of the Document to the public.</p>
+<p>A section “<strong>Entitled XYZ</strong>” means a named subunit of the Document whose title either is precisely XYZ or contains XYZ in parentheses following text that translates XYZ in another language. (Here XYZ stands for a specific section name mentioned below, such as “<strong>Acknowledgements</strong>”, “<strong>Dedications</strong>”, “<strong>Endorsements</strong>”, or “<strong>History</strong>”.) To “<strong>Preserve the Title</strong>” of such a section when you modify the Document means that it remains a section “Entitled XYZ” according to this definition.</p>
+<p>The Document may include Warranty Disclaimers next to the notice which states that this License applies to the Document. These Warranty Disclaimers are considered to be included by reference in this License, but only as regards disclaiming warranties: any other implication that these Warranty Disclaimers may have is void and has no effect on the meaning of this License.</p>
+<p><strong>2. VERBATIM COPYING</strong></p>
+<p>You may copy and distribute the Document in any medium, either commercially or noncommercially, provided that this License, the copyright notices, and the license notice saying this License applies to the Document are reproduced in all copies, and that you add no other conditions whatsoever to those of this License. You may not use technical measures to obstruct or control the reading or further copying of the copies you make or distribute. However, you may accept compensation in exchange for copies. If you distribute a large enough number of copies you must also follow the conditions in section 3.</p>
+<p>You may also lend copies, under the same conditions stated above, and you may publicly display copies.</p>
+<p><strong>3. COPYING IN QUANTITY</strong></p>
+<p>If you publish printed copies (or copies in media that commonly have printed covers) of the Document, numbering more than 100, and the Document’s license notice requires Cover Texts, you must enclose the copies in covers that carry, clearly and legibly, all these Cover Texts: Front-Cover Texts on the front cover, and Back-Cover Texts on the back cover. Both covers must also clearly and legibly identify you as the publisher of these copies. The front cover must present the full title with all words of the title equally prominent and visible. You may add other material on the covers in addition. Copying with changes limited to the covers, as long as they preserve the title of the Document and satisfy these conditions, can be treated as verbatim copying in other respects.</p>
+<p>If the required texts for either cover are too voluminous to fit legibly, you should put the first ones listed (as many as fit reasonably) on the actual cover, and continue the rest onto adjacent pages.</p>
+<p>If you publish or distribute Opaque copies of the Document numbering more than 100, you must either include a machine-readable Transparent copy along with each Opaque copy, or state in or with each Opaque copy a computer-network location from which the general network-using public has access to download using public-standard network protocols a complete Transparent copy of the Document, free of added material. If you use the latter option, you must take reasonably prudent steps, when you begin distribution of Opaque copies in quantity, to ensure that this Transparent copy will remain thus accessible at the stated location until at least one year after the last time you distribute an Opaque copy (directly or through your agents or retailers) of that edition to the public.</p>
+<p>It is requested, but not required, that you contact the authors of the Document well before redistributing any large number of copies, to give them a chance to provide you with an updated version of the Document.</p>
+<p><strong>4. MODIFICATIONS</strong></p>
+<p>You may copy and distribute a Modified Version of the Document under the conditions of sections 2 and 3 above, provided that you release the Modified Version under precisely this License, with the Modified Version filling the role of the Document, thus licensing distribution and modification of the Modified Version to whoever possesses a copy of it. In addition, you must do these things in the Modified Version:</p>
+<ul>
+<li><p>Use in the Title Page (and on the covers, if any) a title distinct from that of the Document, and from those of previous versions (which should, if there were any, be listed in the History section of the Document). You may use the same title as a previous version if the original publisher of that version gives permission.</p></li>
+<li><p>List on the Title Page, as authors, one or more persons or entities responsible for authorship of the modifications in the Modified Version, together with at least five of the principal authors of the Document (all of its principal authors, if it has fewer than five), unless they release you from this requirement.</p></li>
+<li><p>State on the Title page the name of the publisher of the Modified Version, as the publisher.</p></li>
+<li><p>Preserve all the copyright notices of the Document.</p></li>
+<li><p>Add an appropriate copyright notice for your modifications adjacent to the other copyright notices.</p></li>
+<li><p>Include, immediately after the copyright notices, a license notice giving the public permission to use the Modified Version under the terms of this License, in the form shown in the Addendum below.</p></li>
+<li><p>Preserve in that license notice the full lists of Invariant Sections and required Cover Texts given in the Document’s license notice.</p></li>
+<li><p>Include an unaltered copy of this License.</p></li>
+<li><p>Preserve the section Entitled “History”, Preserve its Title, and add to it an item stating at least the title, year, new authors, and publisher of the Modified Version as given on the Title Page. If there is no section Entitled “History” in the Document, create one stating the title, year, authors, and publisher of the Document as given on its Title Page, then add an item describing the Modified Version as stated in the previous sentence.</p></li>
+<li><p>Preserve the network location, if any, given in the Document for public access to a Transparent copy of the Document, and likewise the network locations given in the Document for previous versions it was based on. These may be placed in the “History” section. You may omit a network location for a work that was published at least four years before the Document itself, or if the original publisher of the version it refers to gives permission.</p></li>
+<li><p>For any section Entitled “Acknowledgements” or “Dedications”, Preserve the Title of the section, and preserve in the section all the substance and tone of each of the contributor acknowledgements and/or dedications given therein.</p></li>
+<li><p>Preserve all the Invariant Sections of the Document, unaltered in their text and in their titles. Section numbers or the equivalent are not considered part of the section titles.</p></li>
+<li><p>Delete any section Entitled “Endorsements”. Such a section may not be included in the Modified Version.</p></li>
+<li><p>Do not retitle any existing section to be Entitled “Endorsements” or to conflict in title with any Invariant Section.</p></li>
+<li><p>Preserve any Warranty Disclaimers.</p></li>
+</ul>
+<p>If the Modified Version includes new front-matter sections or appendices that qualify as Secondary Sections and contain no material copied from the Document, you may at your option designate some or all of these sections as invariant. To do this, add their titles to the list of Invariant Sections in the Modified Version’s license notice. These titles must be distinct from any other section titles.</p>
+<p>You may add a section Entitled “Endorsements”, provided it contains nothing but endorsements of your Modified Version by various parties—for example, statements of peer review or that the text has been approved by an organization as the authoritative definition of a standard.</p>
+<p>You may add a passage of up to five words as a Front-Cover Text, and a passage of up to 25 words as a Back-Cover Text, to the end of the list of Cover Texts in the Modified Version. Only one passage of Front-Cover Text and one of Back-Cover Text may be added by (or through arrangements made by) any one entity. If the Document already includes a cover text for the same cover, previously added by you or by arrangement made by the same entity you are acting on behalf of, you may not add another; but you may replace the old one, on explicit permission from the previous publisher that added the old one.</p>
+<p>The author(s) and publisher(s) of the Document do not by this License give permission to use their names for publicity for or to assert or imply endorsement of any Modified Version.</p>
+<p><strong>5. COMBINING DOCUMENTS</strong></p>
+<p>You may combine the Document with other documents released under this License, under the terms defined in section 4 above for modified versions, provided that you include in the combination all of the Invariant Sections of all of the original documents, unmodified, and list them all as Invariant Sections of your combined work in its license notice, and that you preserve all their Warranty Disclaimers.</p>
+<p>The combined work need only contain one copy of this License, and multiple identical Invariant Sections may be replaced with a single copy. If there are multiple Invariant Sections with the same name but different contents, make the title of each such section unique by adding at the end of it, in parentheses, the name of the original author or publisher of that section if known, or else a unique number. Make the same adjustment to the section titles in the list of Invariant Sections in the license notice of the combined work.</p>
+<p>In the combination, you must combine any sections Entitled “History” in the various original documents, forming one section Entitled “History”; likewise combine any sections Entitled “Acknowledgements”, and any sections Entitled “Dedications”. You must delete all sections Entitled “Endorsements”.</p>
+<p><strong>6. COLLECTIONS OF DOCUMENTS</strong></p>
+<p>You may make a collection consisting of the Document and other documents released under this License, and replace the individual copies of this License in the various documents with a single copy that is included in the collection, provided that you follow the rules of this License for verbatim copying of each of the documents in all other respects.</p>
+<p>You may extract a single document from such a collection, and distribute it individually under this License, provided you insert a copy of this License into the extracted document, and follow this License in all other respects regarding verbatim copying of that document.</p>
+<p><strong>7. AGGREGATION WITH INDEPENDENT WORKS</strong></p>
+<p>A compilation of the Document or its derivatives with other separate and independent documents or works, in or on a volume of a storage or distribution medium, is called an “aggregate” if the copyright resulting from the compilation is not used to limit the legal rights of the compilation’s users beyond what the individual works permit. When the Document is included in an aggregate, this License does not apply to the other works in the aggregate which are not themselves derivative works of the Document.</p>
+<p>If the Cover Text requirement of section 3 is applicable to these copies of the Document, then if the Document is less than one half of the entire aggregate, the Document’s Cover Texts may be placed on covers that bracket the Document within the aggregate, or the electronic equivalent of covers if the Document is in electronic form. Otherwise they must appear on printed covers that bracket the whole aggregate.</p>
+<p><strong>8. TRANSLATION</strong></p>
+<p>Translation is considered a kind of modification, so you may distribute translations of the Document under the terms of section 4. Replacing Invariant Sections with translations requires special permission from their copyright holders, but you may include translations of some or all Invariant Sections in addition to the original versions of these Invariant Sections. You may include a translation of this License, and all the license notices in the Document, and any Warranty Disclaimers, provided that you also include the original English version of this License and the original versions of those notices and disclaimers. In case of a disagreement between the translation and the original version of this License or a notice or disclaimer, the original version will prevail.</p>
+<p>If a section in the Document is Entitled “Acknowledgements”, “Dedications”, or “History”, the requirement (section 4) to Preserve its Title (section 1) will typically require changing the actual title.</p>
+<p><strong>9. TERMINATION</strong></p>
+<p>You may not copy, modify, sublicense, or distribute the Document except as expressly provided under this License. Any attempt otherwise to copy, modify, sublicense, or distribute it is void, and will automatically terminate your rights under this License.</p>
+<p>However, if you cease all violation of this License, then your license from a particular copyright holder is reinstated (a) provisionally, unless and until the copyright holder explicitly and finally terminates your license, and (b) permanently, if the copyright holder fails to notify you of the violation by some reasonable means prior to 60 days after the cessation.</p>
+<p>Moreover, your license from a particular copyright holder is reinstated permanently if the copyright holder notifies you of the violation by some reasonable means, this is the first time you have received notice of violation of this License (for any work) from that copyright holder, and you cure the violation prior to 30 days after your receipt of the notice.</p>
+<p>Termination of your rights under this section does not terminate the licenses of parties who have received copies or rights from you under this License. If your rights have been terminated and not permanently reinstated, receipt of a copy of some or all of the same material does not give you any rights to use it.</p>
+<p><strong>10. FUTURE REVISIONS OF THIS LICENSE</strong></p>
+<p>The Free Software Foundation may publish new, revised versions of the GNU Free Documentation License from time to time. Such new versions will be similar in spirit to the present version, but may differ in detail to address new problems or concerns. See <code>https://www.gnu.org/copyleft/</code>.</p>
+<p>Each version of the License is given a distinguishing version number. If the Document specifies that a particular numbered version of this License “or any later version” applies to it, you have the option of following the terms and conditions either of that specified version or of any later version that has been published (not as a draft) by the Free Software Foundation. If the Document does not specify a version number of this License, you may choose any version ever published (not as a draft) by the Free Software Foundation. If the Document specifies that a proxy can decide which future versions of this License can be used, that proxy’s public statement of acceptance of a version permanently authorizes you to choose that version for the Document.</p>
+<p><strong>11. RELICENSING</strong></p>
+<p>“Massive Multiauthor Collaboration Site” (or “MMC Site”) means any World Wide Web server that publishes copyrightable works and also provides prominent facilities for anybody to edit those works. A public wiki that anybody can edit is an example of such a server. A “Massive Multiauthor Collaboration” (or “MMC”) contained in the site means any set of copyrightable works thus published on the MMC site.</p>
+<p>“CC-BY-SA” means the Creative Commons Attribution-Share Alike 3.0 license published by Creative Commons Corporation, a not-for-profit corporation with a principal place of business in San Francisco, California, as well as future copyleft versions of that license published by that same organization.</p>
+<p>“Incorporate” means to publish or republish a Document, in whole or in part, as part of another Document.</p>
+<p>An MMC is “eligible for relicensing” if it is licensed under this License, and if all works that were first published under this License somewhere other than this MMC, and subsequently incorporated in whole or in part into the MMC, (1) had no cover texts or invariant sections, and (2) were thus incorporated prior to November 1, 2008.</p>
+<p>The operator of an MMC Site may republish an MMC contained in the site under CC-BY-SA on the same site at any time before August 1, 2009, provided the MMC is eligible for relicensing.</p>
+<p><strong>ADDENDUM: How to use this License for your documents</strong></p>
+<p>To use this License in a document you have written, include a copy of the License in the document and put the following copyright and license notices just after the title page:</p>
+<blockquote>
+<p>Copyright © YEAR YOUR NAME. Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled “GNU Free Documentation License”.</p>
+</blockquote>
+<p>If you have Invariant Sections, Front-Cover Texts and Back-Cover Texts, replace the “with … Texts.” line with this:</p>
+<blockquote>
+<p>with the Invariant Sections being LIST THEIR TITLES, with the Front-Cover Texts being LIST, and with the Back-Cover Texts being LIST.</p>
+</blockquote>
+<p>If you have Invariant Sections without Cover Texts, or some other combination of the three, merge those two alternatives to suit the situation.</p>
+<p>If your document contains nontrivial examples of program code, we recommend releasing these examples in parallel under your choice of free software license, such as the GNU General Public License, to permit their use in free software.</p>
+<h1 id="how-to-learn-math">How to learn math</h1>
+<p>Now that that’s all out of the way, let’s talk a little about math. When this chapter is over, we’re going to dive right in to proving a bunch of things you already know to be true. We feel that without a little explanation, these proofs may leave you a little lost or confused. We’ll save the explanation of the proofs for later, but right now, we’re going to talk about how to actually learn math, and the proofs are a great example.</p>
+<p>Most people’s experience with math is through their primary and possibly secondary education, which is or was a dreary affair in general, and math probably even moreso, unless you’re one of the lucky few. By lucky few, we don’t mean those wizards with a sort of inherent ability to do math–the first thing you need to know about learning math is that math is for everyone with a brain–that’s you, right? You see, your brain is a pattern recognition engine, and that’s all math is: the study of patterns. Unlike reading or history, your body comes with a biological imperative to know math. There’s some really great brain studies on the topic, but that’s boring, and I said we’re already done with the boring part, so let’s move on.</p>
+<p>In that last paragraph, we presented what we hold to be the proper answer to ’what is math’: the study of patterns. This is completely different from most people’s interaction with math: in primary school, we are taught how to apply four operations to solve math problems. You’re given something about two trains leaving a station and going different speeds and different directions and yadda yadda yadda and before you know it your teacher turned everything into a math problem and it all seemed so forced–a layer on top of what was intuitive, and made everything complicated. We agree–this is a counterintuitive approach to math, and it makes math very confusing and disconnected. Math is just the study of patterns. That is, math is not so much a way to solve a set of problems that exist in a sphere apart from what is natural, but a way to understand what’s going on in the world around us. When you learn math, you should think of it as a science–another level of detail in the amazing world we live in.</p>
+<p>That’s how this book is written. It’s written to reflect that math is a single unified study. While you’re reading it, try to think of how what you’re learning clarifies or refines early material. This is a big deal to us, because one thing we dislike most about the standard way of learning math is that at some point in everyone’s math career, they learn they were taught something that wasn’t actually true. We want to avoid that.</p>
+<h1 id="ch: Philosophy and/or FAQ">Philosophy and/or FAQ</h1>
+<p>by</p>
+<p>This book is written with a certain philosophy in mind. Explaining my philosophy will answer a number of questions I am often asked.</p>
+<p>First, I’ll start with the license. he license I chose for this book is the GNU Free Documentation License (FDL). “Free” refers to freedom, not price. The FDL is similar in spirit to another license, the Creative Commons Attribution-ShareAlike License (CC-SA).</p>
+<p>CC-SA is much more popular than the FDL, mostly because it is much more general. You could distribute a painting under CC-SA, but not the FDL. The CC-SA license and the FDL are both “copyleft” licenses, in that they require that derivative works be licensed under the same license.</p>
+<p>The CC-SA license is too general to fit our purposes. The FDL is specifically designed for reference texts, so it has a clause requiring that the work be made available in source form. The CC-SA has no such requirement.</p>
+<p>Freedom is important, especially in academic works. Part of the reason I wrote this book is that there are very few free textbooks.</p>
+<p>To put it another way, it is of no benefit for the work to be nonfree.</p>
+<ul>
+<li></li>
+<li><p>If the work is free, I, as a writer, benefit from people giving me feedback, and improving upon my work.</p></li>
+<li><p>You, as a reader, benefit from the freedom.</p></li>
+</ul>
+<p>The only people who don’t benefit are distributors (e.g. a publisher). However, in the age of the internet, the need for a for-profit publisher isn’t exactly clear.</p>
+<p>To be clear, it is perfectly okay for a publisher to publish this book, and to attempt to profit off of it. However, the publisher wouldn’t have the traditional nonfree monopoly over the book, which might discourage a publisher.</p>
+<h1 id="ch: Identities, theorems, and the like">Identities, theorems, and the like</h1>
+<p>[appendix-d]</p>
+<p>This appendix just lists identities, theorems, and stuff like that. It’s for reference, not for reading.</p>
+<h2 id="s: Equality">Equality</h2>
+<p>[d-equality]</p>
+<h3 id="ss: Properties">Properties</h3>
+<dl>
+<dt>Reflexive property</dt>
+<dd><p><span class="math inline">\(a \equiv a\)</span></p>
+</dd>
+<dt>Commutative property</dt>
+<dd><p><span class="math inline">\({\left(a = b\right)} \iff {\left(b = a\right)} {{;\;}\forall}a,b\)</span></p>
+</dd>
+<dt>Transitive property</dt>
+<dd><p><span class="math inline">\({\left(a = b\right)} \land {\left(b = c\right)} \implies {\left(a = c\right)} {{;\;}\forall}a,b,c\)</span></p>
+</dd>
+</dl>
+<h3 id="ss: Notation">Notation</h3>
+<dl>
+<dt><span><span class="math inline">\(\mathbf{a = b}\)</span></span></dt>
+<dd><p>means that <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are the same thing.</p>
+</dd>
+<dt><span><span class="math inline">\(\mathbf{a \equiv b}\)</span></span></dt>
+<dd><p>means that <span class="math inline">\(a=b\)</span>, for all <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>. <span class="math inline">\(a \equiv b\)</span> should be read “<span class="math inline">\(a\)</span> is identically equivalent to <span class="math inline">\(b\)</span>”.</p>
+</dd>
+<dt><span><span class="math inline">\(\mathbf{a {:=}b}\)</span></span></dt>
+<dd><p>means that <span class="math inline">\(a\)</span> is defined to be equal to <span class="math inline">\(b\)</span>. In practice, this is the same as <span class="math inline">\(\equiv\)</span>, but is semantically different.</p>
+</dd>
+</dl>
+<h2 id="s: Implications">Implications</h2>
+<p>[d-implications]</p>
+<dl>
+<dt>Reflexive property</dt>
+<dd><p><span class="math inline">\(a \implies a {{;\;}\forall}a\)</span></p>
+</dd>
+<dt>Transitive property</dt>
+<dd><p><span class="math inline">\({\left(a \implies b\right)} \land {\left(b \implies c\right)} \implies {\left(a \implies c\right)} {{;\;}\forall}a,b,c\)</span></p>
+</dd>
+<dt>Negation</dt>
+<dd><p><span class="math inline">\({\left(a \implies b\right)} \iff {\left(\lnot a \impliedby \lnot b\right)} {{;\;}\forall}a,b\)</span></p>
+</dd>
+</dl>
+<h2 id="s: Booleans">Booleans</h2>
+<p>[d-booleans]</p>
+<dl>
+<dt>Definition</dt>
+<dd><p>A is a value of either true or false. The study of Booleans is called . The rules for Booleans also work for propositions. The set of Booleans is often referred to as <span class="math inline">\({\mathbb{B}}= {\left\{\,{\mathrm{True}},{\mathrm{False}}\,\right\}}\)</span></p>
+</dd>
+<dt>Logical-and</dt>
+<dd><p><span class="math inline">\(a \land b\)</span> is pronounced “<span class="math inline">\(a\)</span> logical-and <span class="math inline">\(b\)</span>”. It is true iff <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are both true. <span class="math display">\[\land : {\mathbb{B}}\to {\mathbb{B}}\to {\mathbb{B}}\]</span></p>
+</dd>
+<dt>Logical-or</dt>
+<dd><p><span class="math inline">\(a \lor b\)</span> is pronounced “<span class="math inline">\(a\)</span> logical-or <span class="math inline">\(b\)</span>”. It is true if one or more of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are true. <span class="math display">\[\lor : {\mathbb{B}}\to {\mathbb{B}}\to {\mathbb{B}}\]</span></p>
+</dd>
+<dt>Logical-not</dt>
+<dd><p><span class="math inline">\(\lnot a\)</span> is pronounced “logical-not <span class="math inline">\(a\)</span>”. <span class="math inline">\(\lnot\)</span> takes true to false, and false to true. <span class="math display">\[\lnot : {\mathbb{B}}\to {\mathbb{B}}\]</span></p>
+</dd>
+<dt>Cancellative property</dt>
+<dd><p><span class="math inline">\(\lnot \circ \lnot \equiv {\mathrm{id}}\)</span></p>
+</dd>
+<dt>Nomenclature</dt>
+<dd><p>Booleans are named after George Boole, who was the first to study them to any extent.</p>
+</dd>
+</dl>
+<h3 id="ss: Logical-and">Logical-and</h3>
+<p>[d-booleans-land]</p>
+<dl>
+<dt>Reflexive property</dt>
+<dd><p><span class="math inline">\(a \land a \equiv a\)</span></p>
+</dd>
+<dt>Associative property</dt>
+<dd><p><span class="math inline">\(a \land {\left(b \land c\right)} \equiv {\left(a \land b\right)} \land c\)</span></p>
+</dd>
+<dt>Commutative property</dt>
+<dd><p><span class="math inline">\(a \land b \equiv b \land a\)</span></p>
+</dd>
+<dt>Distributive property</dt>
+<dd><p><span class="math inline">\(a \land {\left(b \lor c\right)} \equiv {\left(a \land b\right)} \lor {\left(b \land c\right)}\)</span></p>
+</dd>
+</dl>
+<h3 id="ss: Logical-or">Logical-or</h3>
+<p>[d-booleans-lor]</p>
+<dl>
+<dt>Reflexive property</dt>
+<dd><p><span class="math inline">\(a \lor a \equiv a\)</span></p>
+</dd>
+<dt>Associative property</dt>
+<dd><p><span class="math inline">\(a \lor {\left(b \lor c\right)} \equiv {\left(a \lor b\right)} \lor c\)</span></p>
+</dd>
+<dt>Commutative property</dt>
+<dd><p><span class="math inline">\(a \lor b \equiv b \lor a\)</span></p>
+</dd>
+<dt>Distributive property</dt>
+<dd><p><span class="math inline">\(a \lor {\left(b \land c\right)} \equiv {\left(a \lor b\right)} \land {\left(b \lor c\right)}\)</span></p>
+<p>This is a consequence of the distributive property mentioned in [d-booleans-land], De Morgan’s first law, and the cancellative property.</p>
+<p>Start with the first property</p>
+<p><span class="math display">\[a \land {\left(b \lor c\right)} \equiv {\left(a \land b\right)} \lor {\left(b \land c\right)}\]</span></p>
+<p>Apply <span class="math inline">\(\lnot\)</span> to both sides</p>
+<p><span class="math display">\[\lnot{\left(a \land {\left(b \lor c\right)}\right)} \equiv \lnot{\left({\left(a \land b\right)} \lor {\left(b \land c\right)}\right)}\]</span></p>
+<p>Apply De Morgan’s laws</p>
+<p><span class="math display">\[\lnot a \lor \lnot{\left(b \lor c\right)} \equiv \lnot{\left(a \land b\right)} \land \lnot{\left(b \land c\right)}\]</span></p>
+<p>Do it again</p>
+<p><span class="math display">\[\lnot a \lor {\left(\lnot b \land \lnot c\right)} \equiv {\left(\lnot a \lor \lnot b\right)} \land {\left(\lnot b \lor \lnot c\right)}\]</span></p>
+<p>Let <span class="math inline">\(p,q,r = \lnot a, \lnot b, \lnot c\)</span>, respectively.</p>
+<p><span class="math display">\[p \lor {\left(q \land r\right)} \equiv {\left(p \lor q\right)} \land {\left(q \lor r\right)}\]</span></p>
+</dd>
+</dl>
+<h3 id="ss: De Morgan&#39;s Laws">De Morgan’s Laws</h3>
+<p>[d-booleans-demorgan]</p>
+<dl>
+<dt>De Morgan’s first law</dt>
+<dd><p><span class="math inline">\(\lnot{\left(a \land b\right)} \equiv \lnot a \lor \lnot b\)</span></p>
+</dd>
+<dt>Derived law</dt>
+<dd><p><span class="math inline">\(\lnot{\left(a \lor b\right)} \equiv \lnot a \land \lnot b\)</span></p>
+<p>Start with the first law</p>
+<p><span class="math display">\[\lnot{\left(a \land b\right)} \equiv \lnot a \lor \lnot b\]</span></p>
+<p>Let <span class="math inline">\(p = \lnot a\)</span>, <span class="math inline">\(q = \lnot b\)</span></p>
+<p><span class="math display">\[p \lor q \equiv \lnot{\left(\lnot p \land \lnot q\right)}\]</span></p>
+<p>Apply <span class="math inline">\(\lnot\)</span> to both sides of <span class="math inline">\(\equiv\)</span></p>
+<p><span class="math display">\[\lnot{\left(p \lor q\right)} \equiv {\lnot p \land \lnot q}\]</span></p>
+</dd>
+</dl>
+<h2 id="s: Sets">Sets</h2>
+<p>[d-sets]</p>
+<h3 id="ss: Definitions">Definitions</h3>
+<p>[d-set-definitions]</p>
+<dl>
+<dt>Unions</dt>
+<dd><p><span class="math inline">\(a \cup b {:=}{\left\{\,x \in {\mathscr{A}}{;\;}x \in a \lor x \in b\,\right\}}\)</span></p>
+</dd>
+<dt>Intersects</dt>
+<dd><p><span class="math inline">\(a \cap b {:=}{\left\{\,x \in a {;\;}x \in b\,\right\}}\)</span></p>
+</dd>
+<dt>Set subtraction (or relative complement)</dt>
+<dd><p><span class="math inline">\(a \bs b {:=}{\left\{\,x \in a {;\;}x \notin b\,\right\}}\)</span></p>
+</dd>
+<dt>Complement (sometimes absolute complement)</dt>
+<dd><p><span class="math inline">\(a^c {:=}{\left\{\,x \in {\mathscr{A}}{;\;}x \notin a\,\right\}}\)</span></p>
+</dd>
+</dl>
+<h3 id="ss: Identities">Identities</h3>
+<p>[d-set-identities]</p>
+<h4 id="sss: Unions">Unions</h4>
+<p>[d-unions]</p>
+<dl>
+<dt>Reflexive property</dt>
+<dd><p><span class="math inline">\(a \union a \equiv a\)</span></p>
+</dd>
+<dt>Associative property</dt>
+<dd><p><span class="math inline">\(a \union {\left(b \union c\right)} \equiv {\left(a \union b\right)} \union c\)</span></p>
+</dd>
+<dt>Commutative property</dt>
+<dd><p><span class="math inline">\(a \union b \equiv b \union a\)</span></p>
+</dd>
+</dl>
+<h4 id="sss: Intersects">Intersects</h4>
+<p>[d-interects]</p>
+<dl>
+<dt>Reflexive property</dt>
+<dd><p><span class="math inline">\(a \intersect a \equiv a\)</span></p>
+</dd>
+<dt>Associative property</dt>
+<dd><p><span class="math inline">\(a \intersect {\left(b \intersect c\right)} \equiv {\left(a \intersect b\right)} \intersect c\)</span></p>
+</dd>
+<dt>Commutative property</dt>
+<dd><p><span class="math inline">\(a \intersect b \equiv b \intersect a\)</span></p>
+</dd>
+</dl>
+<h4 id="sss: Set subtraction identities">Set subtraction identities</h4>
+<p>[d-set-subtraction]</p>
+<ol>
+<li><p><span class="math inline">\(\mathbf{A \bs {\left(B \cap C\right)} \equiv {\left(A \bs B\right)} \union {\left(A \bs C\right)}}\)</span></p>
+<p>Let <span class="math inline">\(A,B,C {\subseteq}{\mathscr{A}}\)</span>.</p>
+<p>A <span>(B C)</span> &amp; <span>:=</span>&amp; <span>{x A<span>;</span>x }</span><br />
+&amp; <span>:=</span>&amp; <span>{x A<span>;</span>x B y C}</span><br />
+</p>
+<p><span>(A B)</span> <span>(A C)</span> &amp; <span>:=</span>&amp; <span>{ x x x }</span><br />
+&amp; <span>:=</span>&amp; <span>{ x }</span><br />
+</p>
+<p><span class="math display">\[x \in A \implies x \in {\mathscr{A}}\]</span></p>
+<p>Therefore</p>
+<p><span>(A B)</span> <span>(A C)</span> &amp; <span>:=</span>&amp; <span>{ x A <span>;</span>x B x C }</span><br />
+A <span>(B C)</span> &amp; <span>:=</span>&amp; <span>{x A<span>;</span>x B y C}</span><br />
+A <span>(B C)</span> &amp; &amp; <span>(A B)</span> <span>(A C)</span><br />
+</p></li>
+<li><p><span class="math inline">\(\mathbf{A \bs {\left(B \union C\right)} \equiv {\left(A \bs B\right)} \intersect {\left(A \bs C\right)}}\)</span></p>
+<p>A <span>(B C)</span> &amp; <span>:=</span>&amp; <span>{ x A <span>;</span>x B x C }</span><br />
+<span>(A B)</span> <span>(A C)</span> &amp; <span>:=</span>&amp; <span>{ x x x }</span><br />
+&amp; <span>:=</span>&amp; <span>{ x A <span>;</span>x B x C }</span><br />
+</p></li>
+<li><p><span class="math inline">\(\mathbf{A \bs {\left(B \bs C\right)} \equiv {\left(A \bs B\right)} \union {\left(A \intersect C\right)}}\)</span></p>
+<p>A <span>(B C)</span> &amp; <span>:=</span>&amp; <span>{ x A <span>;</span>x }</span><br />
+&amp; <span>:=</span>&amp; <span>{ x A <span>;</span>x B x C }</span><br />
+<span>(A B)</span> <span>(A C)</span> &amp; <span>:=</span>&amp; <span>{ x x x }</span><br />
+&amp; <span>:=</span>&amp; <span>{ x A <span>;</span>x B x C }</span><br />
+</p></li>
+<li><p><span class="math inline">\(\mathbf{{\left(A \bs B\right)} \intersect C \equiv {\left(A \cap C\right)} \bs B \equiv A \intersect {\left(C \bs B\right)}}\)</span></p>
+<p><span>(A B)</span> C &amp; <span>:=</span>&amp; <span>{ x x x C }</span><br />
+&amp; <span>:=</span>&amp; <span>{ x A <span>;</span>x B x C }</span><br />
+<span>(A C)</span> B &amp; <span>:=</span>&amp; <span>{ x x x B }</span><br />
+&amp; <span>:=</span>&amp; <span>{ x A <span>;</span>x B x C }</span><br />
+A <span>(C B)</span> &amp; <span>:=</span>&amp; <span>{ x A <span>;</span>x B x C }</span><br />
+</p></li>
+<li><p><span class="math inline">\(\mathbf{{\left(A \bs B\right)} \union C \equiv {\left(A \union C\right)} \bs {\left(B \bs C\right)}}\)</span></p>
+<p><span>(A B)</span> C &amp; <span>:=</span>&amp; <span>{ x x x C }</span><br />
+&amp; <span>:=</span>&amp; <span>{ x x C }</span><br />
+<span>(A C)</span> <span>(B C)</span> &amp; <span>:=</span>&amp; <span>{ x x x }</span><br />
+&amp; <span>:=</span>&amp; <span>{ x }</span><br />
+&amp; <span>:=</span>&amp; <span>{ x }</span><br />
+&amp; <span>:=</span>&amp; <span>{ x x C }</span><br />
+</p></li>
+<li><p><span class="math inline">\(\mathbf{A \bs A \equiv {{\varnothing}}}\)</span></p>
+<p><span class="math display">\[A \setminus A {:=}{\left\{\,x \in A \st x \notin A\,\right\}}\]</span></p>
+<p>There are no elements in <span class="math inline">\(A\)</span> that are also not in <span class="math inline">\(A\)</span>, and the set with no elements is <span class="math inline">\({{\varnothing}}\)</span>.</p></li>
+<li><p><span class="math inline">\(\mathbf{A \bs {{\varnothing}}\equiv A}\)</span></p>
+<p><span class="math display">\[A \bs {{\varnothing}}{:=}{\left\{\,x \in A \bs x \notin {{\varnothing}}\,\right\}}\]</span></p>
+<p><span class="math inline">\({{\varnothing}}\)</span>, by definition has no elements, so all elements in <span class="math inline">\(A\)</span> satisfy the condition <span class="math inline">\(x \notin {{\varnothing}}\)</span>. Thus,</p>
+<p><span class="math display">\[A \bs {{\varnothing}}\equiv A\]</span></p></li>
+<li><p><span class="math inline">\(\mathbf{{{\varnothing}}\bs A \equiv {{\varnothing}}}\)</span></p>
+<p><span class="math display">\[{{\varnothing}}\bs A {:=}{\left\{\,x \in {{\varnothing}}\st x \notin A\,\right\}}\]</span></p>
+<p>There are no elements in <span class="math inline">\({{\varnothing}}\)</span>, so everything fails the condition on the left-hand-side of the <span class="math inline">\(\st\)</span>, hence <span class="math inline">\({{\varnothing}}\bs A \equiv {{\varnothing}}\)</span>.</p></li>
+</ol>
+<h4 id="sss: Distributive properties">Distributive properties</h4>
+<p><span><span class="math inline">\(\mathbf{A \cap {\left(B \cup C\right)} \equiv {\left(A \cap B\right)} \cup {\left(A \cap C\right)}}\)</span></span></p>
+<p>A <span>(B C)</span> &amp; <span>:=</span>&amp; <span>{ x A x B x C }</span><br />
+<span>(A B)</span> <span>(A C)</span> &amp; <span>:=</span>&amp; <span>{ x }</span><br />
+&amp; <span>:=</span>&amp; <span>{ x x A }</span><br />
+&amp; <span>:=</span>&amp; <span>{ x A x B x C }</span><br />
+</p>
+<p><span><span class="math inline">\(\mathbf{A \cup {\left(B \cap C\right)} \equiv {\left(A \cup B\right)} \cap {\left(A \cup C\right)}}\)</span></span></p>
+<p>A <span>(B C)</span> &amp; <span>:=</span>&amp; <span>{ x x A }</span><br />
+<span>(A B)</span> <span>(A C)</span> &amp; <span>:=</span>&amp; <span>{ x }</span><br />
+&amp; <span>:=</span>&amp; <span>{ x x A }</span><br />
+</p>
+<h4 id="sss: Complements">Complements</h4>
+<p><span><span class="math inline">\(\mathbf{{\left(A^c\right)}^c \equiv A}\)</span></span></p>
+<p>A <span>(A B)</span> &amp; &amp; <span>(A A)</span> <span>(A B)</span><br />
+&amp; &amp; <span>(A B)</span><br />
+&amp; &amp; A B<br />
+<span>(A<sup>c</sup>)</span><sup>c</sup> &amp; <span>:=</span>&amp; <span>(A)</span><br />
+&amp; <span>:=</span>&amp; A<br />
+&amp; <span>:=</span>&amp; A<br />
+</p>
+<p><span><span class="math inline">\(\mathbf{{\left(A \cap B\right)}^c \equiv A^c \cup B^c}\)</span></span></p>
+<p>A <span>(B C)</span> &amp; &amp; <span>(A B)</span> <span>(A C)</span><br />
+<span>(A B)</span> &amp; &amp; <span>(A)</span> <span>(B)</span><br />
+&amp; &amp; <span><span>A</span><sup>c</sup></span> <span><span>B</span><sup>c</sup></span><br />
+</p>
+<p><span><span class="math inline">\(\mathbf{{\left(A \union B\right)}^c \equiv A^c \cap B^c}\)</span></span></p>
+<p>A <span>(B C)</span> &amp; &amp; <span>(A B)</span> <span>(A C)</span><br />
+<span>(A B)</span> &amp; &amp; <span>(A)</span> <span>(B)</span><br />
+&amp; &amp; <span><span>A</span><sup>c</sup></span> <span><span>B</span><sup>c</sup></span><br />
+</p>
+<h3 id="ss: ZFC">ZFC</h3>
+<p>[d-zfc]</p>
+<dl>
+<dt>ZFC</dt>
+<dd><p>Short for Zermelo-Fraenkel-Choice: a set of axioms rigorously describing set theory.</p>
+</dd>
+<dt>Nomenclature</dt>
+<dd><p>Named after Ernst Zermelo, who formulated the axioms, and Abraham Fraenkel, who greatly improved them.</p>
+</dd>
+<dt>Russell’s paradox</dt>
+<dd><p>A paradox proposed by Bertrand Russell in the early 20<sup>th</sup> century regarding unrestricted set comprehensions</p>
+<p>A = <span>{x <span>;</span>x x}</span><br />
+A A</p>
+</dd>
+<dt>ZF</dt>
+<dd><p>ZFC without the axiom of choice</p>
+</dd>
+</dl>
+<h2 id="s: Functions">Functions</h2>
+<p>[d-functions]</p>
+<h3 id="ss: Vocabulary">Vocabulary</h3>
+<dl>
+<dt>Function</dt>
+<dd><p>A mathematical construct mapping an input to an output.</p>
+</dd>
+<dt>Referential transparency</dt>
+<dd><p><span class="math inline">\(a = b \implies {f {\left(a\right)}} =
+  {f {\left(b\right)}}\)</span>. All functions are referentially transparent.</p>
+</dd>
+<dt>Domain</dt>
+<dd><p>If <span class="math inline">\(f : A \to B\)</span>, then <span class="math inline">\(A\)</span> is the of <span class="math inline">\(f\)</span>.</p>
+</dd>
+<dt>Codomain</dt>
+<dd><p>If <span class="math inline">\(f : A \to B\)</span>, then <span class="math inline">\(B\)</span> is the of <span class="math inline">\(f\)</span>.</p>
+</dd>
+<dt>Image</dt>
+<dd><p><span class="math inline">\({{{\mathrm{im} {\left(\right)}}}}{f} {:=}{\left\{\,{f {\left(x\right)}} \in B{;\;}x \in A\,\right\}}\)</span></p>
+</dd>
+<dt>Injectivity</dt>
+<dd><p><span class="math inline">\({\centernot\exists}\mvec{a,b} {;\;}a,b \in A \land a \ne b \land {f {\left(a\right)}} = {f {\left(b\right)}}\)</span></p>
+</dd>
+<dt>Surjectivity</dt>
+<dd><p><span class="math inline">\(\codom{f} = {{{\mathrm{im} {\left(\right)}}}}{f}\)</span></p>
+</dd>
+<dt>Bijectivity</dt>
+<dd><p>A function is if it is both injective and surjective.</p>
+</dd>
+<dt>Invertibility</dt>
+<dd><p>A function is invertible iff it is bijective. The inverse of <span class="math inline">\(f\)</span> is <span class="math inline">\({{{\mathrm{arc} {\left(\right)}}}}{f}\)</span></p>
+</dd>
+<dt>Preimage</dt>
+<dd><p><span class="math inline">\(\mathrm{preim} {:=}\mathbf{codom} \circ \mathrm{arc}\)</span></p>
+</dd>
+<dt>Argument</dt>
+<dd><p>The specific input values to a function.</p>
+</dd>
+<dt>Signature</dt>
+<dd><p>If <span class="math inline">\(f : A \to B\)</span> is a function, then <span class="math inline">\(A \to B\)</span> is its signature.</p>
+</dd>
+</dl>
+<h3 id="ss: Notation">Notation</h3>
+<dl>
+<dt>: notation</dt>
+<dd><p><span class="math inline">\(f : A \to B\)</span> means that <span class="math inline">\(f\)</span> takes an item from <span class="math inline">\(A\)</span>, and outputs an item to <span class="math inline">\(B\)</span>, where <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are types.</p>
+</dd>
+<dt>Currying</dt>
+<dd><p>Taking a function of multiple arguments, and transforming it into a chain of functions each taking one argument.</p>
+<p>Normal signature</p>
+<p><span class="math inline">\(+ : \mvec{{\mathbb{C}},{\mathbb{C}}} \to {\mathbb{C}}\)</span></p>
+<p>Curried signature:</p>
+<p><span class="math inline">\(+ : {\mathbb{C}}\to {\mathbb{C}}\to {\mathbb{C}}\)</span></p>
+<p>This doesn’t change the behavior of the function, only the semantics.</p>
+<p>Likewise, is to undo the currying.</p>
+</dd>
+<dt>Composition</dt>
+<dd><p>We can smush two functions together with <span class="math inline">\(\of\)</span>:</p>
+<p>: <span>(b c)</span> <span>(a b)</span> a c<br />
+<span><span>(f g)</span> <span>(x)</span></span> <span>:=</span><span>f <span>(<span>g <span>(x)</span></span>)</span></span><br />
+</p>
+</dd>
+</dl>
+<h2 id="s: Lambda calculus">Lambda calculus</h2>
+<p>[d-lambda-calculus]</p>
+<dl>
+<dt><span class="math inline">\(\lambda\)</span> abstraction</dt>
+<dd><p>A way to write a function: <span class="math inline">\({\lambda{\left(\,x,y\,\right)} \to} x + y\)</span></p>
+</dd>
+<dt><span class="math inline">\(\alpha\)</span> conversion</dt>
+<dd><p>Changing the names of the arguments. For instance, you can write the above function as</p>
+<p><span class="math display">\[{\lambda{\left(\,a,b\,\right)} \to} a + b\]</span></p>
+</dd>
+<dt><span class="math inline">\(\beta\)</span> reduction</dt>
+<dd><p>Partially calculating a result. For instance</p>
+<p><span class="math display">\[{\lambda{\left(\,2,y\,\right)} \to} 2 + y\]</span></p>
+<p>Can be <span class="math inline">\(\beta\)</span> reduced to</p>
+<p><span class="math display">\[{\lambda{\left(\,y\,\right)} \to} 2 + y\]</span></p>
+</dd>
+<dt><span class="math inline">\(\eta\)</span> conversion</dt>
+<dd><p>Removing or adding extraneous free arguments. The last function</p>
+<p><span class="math display">\[{\lambda{\left(\,2,y\,\right)} \to} 2 + y\]</span></p>
+<p>Can be <span class="math inline">\(\eta\)</span> to</p>
+<p><span class="math display">\[2 +\]</span></p>
+<p>Which could then be <span class="math inline">\(\eta\)</span> to</p>
+<p><span class="math display">\[{\lambda{\left(\,2,\kappa\,\right)} \to} 2 + \kappa\]</span></p>
+</dd>
+</dl>
+<h2 id="s: Greek alphabet">Greek alphabet</h2>
+<p>[d-greek-alphabet]</p>
+<p><span>|c|c|c|</span> &amp; &amp;<br />
+A, <span class="math inline">\(\alpha\)</span> &amp; Alpha &amp; A<br />
+B, <span class="math inline">\(\beta\)</span> &amp; Beta &amp; B<br />
+<span class="math inline">\(\Gamma, \gamma\)</span> &amp; Gamma &amp; G<br />
+<span class="math inline">\(\Delta, \delta\)</span> &amp; Delta &amp; D<br />
+E, <span class="math inline">\(\epsilon\)</span> &amp; Epsilon &amp; E, jt, phlm<br />
+Z, <span class="math inline">\(\zeta\)</span> &amp; Zeta &amp; Z<br />
+H, <span class="math inline">\(\eta\)</span> &amp; Eta &amp; Eh, rn, t<br />
+<span class="math inline">\(\Theta, \theta\)</span> &amp; Theta &amp; Th, eater, under<br />
+I, <span class="math inline">\(\iota\)</span> &amp; Iota &amp; Ee, ft, jp<br />
+K, <span class="math inline">\(\kappa\)</span> &amp; Kappa &amp; K<br />
+<span class="math inline">\(\Lambda, \lambda\)</span> &amp; Lambda &amp; L<br />
+M, <span class="math inline">\(\mu\)</span> &amp; Mu &amp; M<br />
+N, <span class="math inline">\(\nu\)</span> &amp; Nu &amp; N<br />
+<span class="math inline">\(\Xi, \xi\)</span> &amp; Xi &amp; Ks, du<br />
+O, o &amp; Omicron &amp; Oh, t<br />
+<span class="math inline">\(\Pi, \pi\)</span> &amp; Pi &amp; P<br />
+P, <span class="math inline">\(\rho\)</span> &amp; Rho &amp; R<br />
+<span class="math inline">\(\Sigma, \sigma\)</span> &amp; Sigma &amp; S<br />
+T, <span class="math inline">\(\tau\)</span> &amp; Tau &amp; T<br />
+<span class="math inline">\(\Upsilon, \upsilon\)</span> &amp; Upsilon &amp; U<br />
+<span class="math inline">\(\Phi, \phi\)</span> &amp; Phi &amp; F<br />
+X, <span class="math inline">\(\chi\)</span> &amp; Chi &amp; Sh, opping<br />
+<span class="math inline">\(\Psi, \psi\)</span> &amp; Psi &amp; Ps, cu<br />
+<span class="math inline">\(\Omega, \omega\)</span> &amp; Omega &amp; O, bss<br />
+</p>
+<h2 id="s: Special sets">Special sets</h2>
+<p>[d-special-sets]</p>
+<p>Despite my informal notation, these are all sets</p>
+<p><span class="math inline">\({\mathbb{N}}= {\left\{\,0,1,2,3,4,5,\dots\,\right\}}\)</span></p>
+<p><span class="math inline">\({\mathbb{Z}}= {\left\{\,\dots, `5, `4, `3, `2, `1, 0,1,2,3,4,5,\dots\,\right\}}\)</span></p>
+<p><span class="math inline">\({\mathbb{R}}\)</span> any given number on the number line.</p>
+<p><span class="math inline">\({\mathbb{Q}}= {\left\{\,\frac{x}{y} \in {\mathbb{R}}\st x,y \in {\mathbb{Z}}\land y \ne 0\,\right\}}\)</span></p>
+<p><span class="math inline">\({\mathbb{C}}= {\left\{\,a + bi \st \mvec{a,b} \in {\mathbb{R}}\times{\mathbb{R}}, i = \sqrt{`1}\,\right\}}\)</span></p>
+<p><span class="math inline">\({\mathbb{I}}= {\mathbb{R}}\bs {\mathbb{Q}}\)</span></p>
+<h3 id="ss: Properties and identities">Properties and identities</h3>
+<h4 id="sss: Addition">Addition</h4>
+<dl>
+<dt>Additive identity</dt>
+<dd><p><span><span class="math inline">\({a + 0 \equiv 0}\)</span></span></p>
+</dd>
+<dt>Associative property</dt>
+<dd><p><span><span class="math inline">\({a + {\left(b + c\right)} \equiv {\left(a + b\right)} + c}\)</span></span></p>
+</dd>
+<dt>Commutative property</dt>
+<dd><p><span><span class="math inline">\({a + b \equiv b + a}\)</span></span></p>
+</dd>
+<dt>Cancellative property</dt>
+<dd><p><span><span class="math inline">\({a + b = a + c \implies b = c}\)</span></span></p>
+</dd>
+<dt>Negative property</dt>
+<dd><p><span><span class="math inline">\({\forall a \in {\mathbb{C}}\st \exists {`}a \in {\mathbb{C}}\st a + {`}a = 0}\)</span></span></p>
+</dd>
+<dt>Distribution</dt>
+<dd><p><span><span class="math inline">\({{`}{{\left(a + b\right)}} \equiv {`}a + {`}b}\)</span></span></p>
+</dd>
+</dl>
+<h4 id="sss: Subtraction">Subtraction</h4>
+<dl>
+<dt>Definition</dt>
+<dd><p><span><span class="math inline">\({a - b {:=}a + {`}b}\)</span></span></p>
+</dd>
+<dt>Associative property</dt>
+<dd><p><span><span class="math inline">\({a - {\left(b - c\right)} \equiv {\left(a - b\right)} - c}\)</span></span></p>
+</dd>
+<dt>Subtractive identity</dt>
+<dd><p><span><span class="math inline">\({a - 0 \equiv a}\)</span></span></p>
+</dd>
+<dt>Negative property</dt>
+<dd><p><span><span class="math inline">\({a - b \equiv a + {`}b}\)</span></span></p>
+</dd>
+<dt>Distribution theorem</dt>
+<dd><p><span><span class="math inline">\({a - {\left(b + c\right)} \equiv a - b - c}\)</span></span></p>
+</dd>
+</dl>
+<h4 id="sss: Multiplication">Multiplication</h4>
+<dl>
+<dt>Multiplicative identity</dt>
+<dd><p><span><span class="math inline">\({a \ntimes 1 \equiv a}\)</span></span></p>
+</dd>
+<dt>Associative property</dt>
+<dd><p><span><span class="math inline">\({a \ntimes {\left(b \ntimes c\right)} \equiv {\left(a \ntimes b\right)} \ntimes c}\)</span></span></p>
+</dd>
+<dt>Commutative property</dt>
+<dd><p><span><span class="math inline">\({a \ntimes b \equiv b \ntimes a}\)</span></span></p>
+</dd>
+<dt>Cancellative property</dt>
+<dd><p><span><span class="math inline">\({a \ntimes b = a \ntimes c \implies b = c}\)</span></span></p>
+</dd>
+<dt>Divisive property</dt>
+<dd><p><span><span class="math inline">\({\forall a \in {\mathbb{C}}\st \exists {{{\mathrm{arc} {\left(\right)}}}}{a} \in {\mathbb{C}}\st a \ntimes {{{\mathrm{arc} {\left(\right)}}}}a = 1}\)</span></span></p>
+<p><span><span><span> <span>()</span></span></span></span><span>0</span> &amp; <span>:=</span>&amp; 1<br />
+<span><span><span> <span>()</span></span></span></span><span>n</span> &amp; <span>:=</span>&amp; <span>n</span><br />
+</p>
+</dd>
+<dt>Distribution</dt>
+<dd><p><span><span class="math inline">\({\frac{a}{b \ntimes c} \equiv \frac{a}{b} \ntimes \frac{a}{c}}\)</span></span></p>
+</dd>
+<dt>Distribution over +</dt>
+<dd><p><span><span class="math inline">\({a \ntimes {\left(b + c\right)} \equiv {\left(a \ntimes b\right)} + {\left(a \ntimes c\right)}}\)</span></span></p>
+</dd>
+<dt>Notation</dt>
+<dd><p><span><span class="math inline">\({ab = a\ntimes b}\)</span></span> if <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are two separate things.</p>
+</dd>
+</dl>
+<h4 id="sss: Division">Division</h4>
+<dl>
+<dt>Divisive identity</dt>
+<dd><p><span><span class="math inline">\({a \div 1 \equiv a}\)</span></span></p>
+</dd>
+<dt>Separative property</dt>
+<dd><p><span><span class="math inline">\({a \div b \equiv a \ntimes{\frac{1}}{b}}\)</span></span></p>
+</dd>
+<dt>Antiassociative property</dt>
+<dd><p><span><span class="math inline">\({a \div {\left(b \div c\right)} \equiv a \ntimes {\left(c \div b\right)}}\)</span></span></p>
+</dd>
+</dl>
+<h1 id="ch: Graph source code">Graph source code</h1>
+<p>This appendix contains all of the source code for the various graphs throughout the book.</p>
+<h1 id="ch: Answers to the exercises">Answers to the exercises</h1>
+<p>[ex-solutions]</p>
+<h1 id="ch: Basic arithmetic">Basic arithmetic</h1>
+<p>[basic-arithmetic]</p>
+<p>This is a review appendix. It will teach you the basic facts of arithmetic, basic algebra, and how to do proofs. It’s too boring for the rest of the book. Nonetheless, even if you have arithmetic and proofs under your belt, this chapter will be very helpful.</p>
+<p>We are going to start with some very simple axioms about arithmetic, called the Peano axioms. From there, we will prove all of the things we know about addition, subtraction, multiplication, et cetera.</p>
+<p>This is more or less a copy of Edmund Landau’s , found in <span class="citation" data-cites="landau-analysis">\cite{landau-analysis}</span>. However, Landau’s book, while very rigorous, is very breve, and very dry. His book is about 130 pages long, and very formal. This appendix is unfinished; however, when it is finished, I expect it to be much longer, and very informal — but nonetheless rigorous.</p>
+<p>Even if you don’t read this, I highly recommend you buy a copy of Landau’s book, if only for reference purposes. It doesn’t cost very much. I think I bought my copy for US $30.00.</p>
+<p>This appendix is independent of the rest of the book – the main part of the book does not assume you have read this appendix, and this appendix doesn’t assume you’ve read the rest of the book.<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a> (Hence why it’s an appendix). With that in mind, there is some duplication between here and the book. Sorry about that.</p>
+<h2 id="s: Peano axioms">Peano axioms</h2>
+<h4 id="sss: Properties of equality">Properties of equality</h4>
+<p>Before we get to the slightly less boring part, we have to review the properties of equality.</p>
+<p><span class="math inline">\(x = y\)</span> means that two things — <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> in this case — are the same thing, at least in some scope.</p>
+<p>If I use a letter instead of a number, it usually means “stick some number here, but we don’t know what number it is”. If it’s in the context of “for all”, then it usually doesn’t matter what number we are talking about, as the property is true for every case.</p>
+<dl>
+<dt>Reflexive property</dt>
+<dd><p><span class="math inline">\(x = x\)</span>, for all <span class="math inline">\(x\)</span>. So, <span class="math inline">\(x\)</span> is the same thing as itself. Duh.</p>
+</dd>
+<dt>Commutative property</dt>
+<dd><p>For all <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, if <span class="math inline">\(x = y\)</span>, then <span class="math inline">\(y =
+  x\)</span>. “Commute” means “move”, so the commutative property is the property of moving things around.</p>
+</dd>
+<dt>Transitive property</dt>
+<dd><p>For all <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, and <span class="math inline">\(z\)</span>, if <span class="math inline">\(x = y\)</span>, and <span class="math inline">\(y = z\)</span>, then <span class="math inline">\(x = z\)</span>.</p>
+</dd>
+</dl>
+<p>Thus, something like</p>
+<p><span class="math display">\[a = b = c = d\]</span></p>
+<p>Is just the lazyman’s way of writing</p>
+<p><span class="math display">\[a = b {,\,}b = c {,\,}c = d\]</span></p>
+<p>Because of the transitive property, it also means</p>
+<p><span class="math display">\[a = c \land d = b \land a = d\]</span></p>
+<h4 id="sss: Axioms of natural numbers">Axioms of natural numbers</h4>
+<p>The natural numbers are the “whole numbers”, usually denoted as <span class="math inline">\({\mathbb{N}}\)</span>.</p>
+<p><span class="math display">\[{\mathbb{N}}{:=}{\left\{\,0,1,2,3,4,\dots\,\right\}}\]</span></p>
+<p><span class="math inline">\(0\)</span> is a natural number.<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a></p>
+<p>For each natural number <span class="math inline">\(x\)</span>, there is exactly one separate natural number, called the , denoted <span class="math inline">\({\eva{{\mathscr{S}}}{x}}\)</span>.</p>
+<p>The successor is the next number. So, <span class="math inline">\({\eva{{\mathscr{S}}}{0}} = 1\)</span>, <span class="math inline">\({\eva{{\mathscr{S}}}{1}} = 2\)</span>, <span class="math inline">\({\eva{{\mathscr{S}}}{2}} = 3\)</span>, et cetera. This also means that we can define every natural number as some succession from <span class="math inline">\(0\)</span>:</p>
+<p>It’s also true that if <span class="math inline">\(x = y\)</span>, then <span class="math inline">\({\eva{{\mathscr{S}}}{x}} = {\eva{{\mathscr{S}}}{y}}\)</span>. (This makes <span class="math inline">\({\mathscr{S}}\)</span> a ).</p>
+<p><span class="math display">\[{\eva{{\mathscr{S}}}{{\eva{{\mathscr{S}}}{{\eva{{\mathscr{S}}}{{\eva{{\mathscr{S}}}{0}}}}}}}} = 4\]</span></p>
+<p>[injection-axiom] There are no two numbers who have the same successor. That is, if <span class="math inline">\({\eva{{\mathscr{S}}}{x}} = {\eva{{\mathscr{S}}}{y}}\)</span>, then <span class="math inline">\(x = y\)</span>, for all <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. (This makes <span class="math inline">\({\mathscr{S}}\)</span> an ).</p>
+<p>There is no natural number <span class="math inline">\(q\)</span> such that <span class="math inline">\({\eva{{\mathscr{S}}}{q}} = 0\)</span>.</p>
+<p>Let there be a set <span class="math inline">\(M\)</span> such that:</p>
+<ol>
+<li><p><span class="math inline">\(0\)</span> is in <span class="math inline">\(M\)</span> (denoted <span class="math inline">\(0 \in M\)</span>)</p></li>
+<li><p>If some number <span class="math inline">\(x\)</span> is in <span class="math inline">\(M\)</span>, then its successor <span class="math inline">\({\eva{{\mathscr{S}}}{x}}\)</span> is also in <span class="math inline">\(M\)</span></p></li>
+</ol>
+<p>Then <span class="math inline">\(M\)</span> contains all of the natural numbers. This establishes the completeness of <span class="math inline">\({\mathbb{N}}\)</span>.</p>
+<h3 id="ss: Addition">Addition</h3>
+<p>For all <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, if <span class="math inline">\(x \ne y\)</span>, then <span class="math inline">\({\eva{{\mathscr{S}}}{x}} \ne {\eva{{\mathscr{S}}}{y}}\)</span>.</p>
+<p>Else we would have <span class="math inline">\({\eva{{\mathscr{S}}}{x}} = {\eva{{\mathscr{S}}}{y}}\)</span>, and, by [injection-axiom], <span class="math inline">\(x = y\)</span></p>
+<p><span class="math inline">\({\eva{{\mathscr{S}}}{x}} \ne x\)</span></p>
+<p>Let <span class="math inline">\(Q\)</span> be the set of all <span class="math inline">\(x\)</span> for which this property holds true.</p>
+<p>By axiom 1, <span class="math inline">\(0 \in {\mathbb{N}}\)</span>. By axiom 3, <span class="math inline">\({\centernot\exists}q \in N \st {\eva{{\mathscr{S}}}{q}} =
+    0\)</span>. Therefore <span class="math inline">\({\eva{{\mathscr{S}}}{0}} \ne 0\)</span>.</p>
+<p>By construction, if <span class="math inline">\(x \in Q\)</span>, then <span class="math inline">\({\eva{{\mathscr{S}}}{x}} \ne x\)</span>. By the previous theorem, <span class="math inline">\({\eva{{\mathscr{S}}}{{\eva{{\mathscr{S}}}{x}}}} \ne {\eva{{\mathscr{S}}}{x}}\)</span>, which would mean that <span class="math inline">\({\eva{{\mathscr{S}}}{x}} \in Q\)</span>. Thus, by axiom 5, <span class="math inline">\(Q = {\mathbb{N}}\)</span>.</p>
+<p>Therefore, for all <span class="math inline">\(x \in {\mathbb{N}}\)</span>, <span class="math inline">\(x \ne {\eva{{\mathscr{S}}}{x}}\)</span></p>
+<p>This is unfinished.</p>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>You’ll learn as we go along, when math people use a common term like <span><em>set</em></span>, <span><em>function</em></span>, <span><em>proof</em></span>, <span><em>group</em></span>, <span><em>continuous</em></span> or <span><em>closed</em></span>, they usually mean something similar in concept to the colloquial term, but there are some strings attached. This is usually the case in the sciences too (e.g. , , ).<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>This isn’t actually true. Math isn’t hard, stupid!<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>For you youngsters, Steve Jobs is the former CEO of Apple. He’s dead now.<a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p>Hey, you found me!<a href="#fnref4">↩</a></p></li>
+<li id="fn5"><p>Well, clicking the URL will open up your web browser, but you get the point<a href="#fnref5">↩</a></p></li>
+<li id="fn6"><p>You better think this, because it took me 30 minutes to get the alignment right. So, you know, remember <span class="math inline">\(\in\)</span> this way, or else…[30minalign]<a href="#fnref6">↩</a></p></li>
+<li id="fn7"><p>There’s a programming language called Clojure, whose name is a pun on this concept.<a href="#fnref7">↩</a></p></li>
+<li id="fn8"><p>Some early math textbooks accidentally printed the upside-down.<span class="citation" data-cites="w-aleph-null">\cite{w-aleph-null}</span> What a bunch of idiots.<a href="#fnref8">↩</a></p></li>
+<li id="fn9"><p>Although the book does assume you know most of the stuff covered in this appendix.<a href="#fnref9">↩</a></p></li>
+<li id="fn10"><p>Some people say that <span class="math inline">\(1\)</span> is the first natural number. It doesn’t matter a whole lot, at least as far as construction goes. Most people nowadays start with <span class="math inline">\(0\)</span>, because <span class="math inline">\(0\)</span> is the additive identity. That is, <span class="math inline">\(a + 0 \equiv a\)</span>.<a href="#fnref10">↩</a></p></li>
+</ol>
+</section>
+</body>
+</html>
