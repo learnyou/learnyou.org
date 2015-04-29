@@ -37,6 +37,10 @@ sass =
   
 main :: IO ()
 main = hakyll $ do
+  match "prod.gitignore" $ do
+    route $ gsubRoute "prod" (const "")
+    compile copyFileCompiler
+
   match "res/stylesheets/*" $ do
     route $ setExtension "css"
     compile sass
