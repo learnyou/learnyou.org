@@ -8,6 +8,9 @@ fun, free, and open-source learning materials.
 With that in mind, this is a project to create easy-to-read, fun, free,
 and open-source learning materials.
 
+**To be perfectly clear, this project is not affiliated with [Learn You
+a Haskell][10] or [Learn You Some Erlang][9]**.[^1]
+
 At the moment, there's one guy, me, Peter Harpending. I only have the
 one project: [*Learn You Some Algebras for Glorious Good!*][1], a math
 textbook. I have other projects, just none other that are relevant here.
@@ -53,6 +56,9 @@ welcome to. In most cases, that person will actually send me back their
 changes. Thus the quality of the book improves, with minimal effort on
 my part. This happens more than you would think.
 
+[^1]: I did ask the Learn You a Haskell! author's permission to name my
+      project as such, and he granted me permission.
+
 [1]: /
 [2]: http://opensource.org/osd
 [3]: https://youtu.be/aNAtbYSxzuA?t=12m30s
@@ -61,3 +67,5 @@ my part. This happens more than you would think.
 [6]: https://webchat.freenode.net/?channels=%23lysa
 [7]: https://github.com/learnyou
 [8]: https://creativecommons.org/licenses/by-sa/4.0/
+[9]: http://learnyousomeerlang.com/
+[10]: http://learnyouahaskell.com/
