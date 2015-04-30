@@ -1,5 +1,3 @@
-### Nightly PDFs: <http://nightly.learnyou.org/lysa>
-
 # Learn You Some Algebras for Glorious Good!
 
 This is a math book. We aim to take a logically rigorous, yet informal
