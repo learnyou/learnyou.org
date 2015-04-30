@@ -41,14 +41,6 @@ main = hakyll $ do
     route $ gsubRoute "prod" (const "")
     compile copyFileCompiler
 
-  match "res/stylesheets/*" $ do
-    route $ setExtension "css"
-    compile sass
-
-  match "res/**" $ do
-    route idRoute
-    compile copyFileCompiler
-
   match "images/*" $ do
     route idRoute
     compile copyFileCompiler
