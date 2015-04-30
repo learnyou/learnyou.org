@@ -8,6 +8,9 @@ The title (and content) is inspired by Miran Lipovača's
 out of date, so I don't recommend it for Haskell. I instead recommend
 [bitemyapp's guide][bmag].
 
+**This project is not affiliated with *Learn You a Haskell for Great
+Good!* or [Fred Hébert's *Learn You Some Erlang for Great Good!*][2].**
+
 [lyah]: http://learnyouahaskell.com/
 [bmag]: https://github.com/bitemyapp/learnhaskell
 [webchat]: https://webchat.freenode.net/?channels=%23lysa
@@ -27,31 +30,18 @@ connect through [FreeNode's webchat][webchat]. You can email me
 If you have any questions about LYSA (or math), feel free to ask in the
 channel, or in the issue tracker.
 
-# Contributing
+## Contributing
 
 Contributions are welcome and needed. Please see the
 [contributing guide](https://github.com/learnyou/lysa/blob/master/en/CONTRIBUTING.md)
 first.
 
-# License
+(I'm sorry, I know how much of a pain they are).
 
-LYSA is licensed under the [GNU Free Documentation License][gfdl]. This
-means many things, but here's the gist of it:
+## License
 
-* You are free to read this book, redistribute it, change it, sell it,
-  what-have-you. There are a minimum of strings attached.
+LYSA and this website are both licensed under the 
+[Creative Commons Attribution-ShareAlike 4.0 International License][1].
 
-* The first string - you have to give us credit. You can't claim that
-  you wrote this book all on your own.
-
-* The second thing - you are welcome to make changes, but, if you
-  publish your changes, you must publish your changes under the same
-  license. This ensures that we can then integrate your changes back
-  into the main work.
-
-If you want to know the details, read the [legal code][gfdl].
-
-[gfdl]: http://www.gnu.org/licenses/fdl.html
-
-The content of this site is licensed under the
-[Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/legalcode).
+[1]: http://creativecommons.org/licenses/by-sa/4.0
+[2]: http://learnyousomeerlang.com/
