@@ -1,6 +1,12 @@
 # Learn You Some Algebras for Glorious Good!
 
-This is a math book. We aim to take a logically rigorous, yet informal
+This is a --
+
+### I don't care about all of that, I just want to read the book.
+
+Okay, here: http://nightly.learnyou.org/lysa
+
+-- math book. We aim to take a logically rigorous, yet informal
 approach to math.
 
 The title (and content) is inspired by Miran Lipovača's
