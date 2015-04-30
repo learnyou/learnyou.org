@@ -1,52 +1,57 @@
-# Learn You!
+# Learn You Some Algebras for Glorious Good!
 
-This is a project to create free and open-source learning materials, be
-them textbooks, interactive online things, or whatever.
+This is a math book. We aim to take a logically rigorous, yet informal
+approach to math.
 
-We only have two projects at the moment:
+The title (and content) is inspired by Miran Lipovača's
+[Learn You a Haskell for Great Good!][lyah]. LYAH is unfortunately a bit
+out of date, so I don't recommend it for Haskell. I instead recommend
+[bitemyapp's guide][bmag].
 
-1. [*Learn You Some Algebras for Glorious Good!*](/lysa.html), a math
-   textbook.
+[lyah]: http://learnyouahaskell.com/
+[bmag]: https://github.com/bitemyapp/learnhaskell
+[webchat]: https://webchat.freenode.net/?channels=%23lysa
 
-2. This website. The source for this site can be found
-   [on our GitHub page](https://github.com/learnyou/website).
+I have observed that most math (and science) books nowadays seem to take
+an approach wherein it's more important to keep an academic tone than it
+is for the reader to understand the material, and, more importantly,
+enjoy reading the book. We take the opposite approach. We want to create
+a book that is fun to read, easy to understand, while still addressing
+the more advanced concepts in math.
 
-*What does "free and open-source" mean?*
+If you like chatting on IRC, come see us in `#lysa` on FreeNode. If you
+don't know what IRC is, or you don't have a client set up, you can
+connect through [FreeNode's webchat][webchat]. You can email me
+(pharpend) at `peter@harpending.org`. I'm `pharpend` in the channel.
 
-Contrary to popular belief, it actually has nothing to do with the fact
-that you don't have to pay for our work.  It means you are free to do
-certain things with our work. Specifically, you have these four
-freedoms:[^1]
+If you have any questions about LYSA (or math), feel free to ask in the
+channel, or in the issue tracker.
 
-1. The freedom to use our work as you wish, for any purpose.
-2. The freedom to change our work if you don't like it.
-3. The freedom to distribute exact copies of our work.
-3. The freedom to distribute modified copies of our work.
+# Contributing
 
-You can even sell our work if you want to. Nothing's stopping you.
+Contributions are welcome and needed. Please see the
+[contributing guide](https://github.com/learnyou/lysa/blob/master/en/CONTRIBUTING.md)
+first.
 
-I'm tired of saying "our work". Instead, I'm going to say "book", but
-understand that "book" could in theory refer to something else.[^2]
+# License
 
-"Free" is a somewhat ambiguous term, because in this context, it usually
-refers to price. Most people prefer the term "open-source", which more
-or less [means the same thing][2].
+LYSA is licensed under the [GNU Free Documentation License][gfdl]. This
+means many things, but here's the gist of it:
 
-Curiously enough, it is actually to our benefit to make our books
-open-source.
+* You are free to read this book, redistribute it, change it, sell it,
+  what-have-you. There are a minimum of strings attached.
 
-*Wait, so you're giving your books away, and that benefits you somehow?*
+* The first string - you have to give us credit. You can't claim that
+  you wrote this book all on your own.
 
-Yep. Basically, if someone sees a way to improve a book, they are
-welcome to. In most cases, that person will actually send us back their
-changes, and thus the quality of the book improves, with no effort from
-us. This happens more than you would think.
+* The second thing - you are welcome to make changes, but, if you
+  publish your changes, you must publish your changes under the same
+  license. This ensures that we can then integrate your changes back
+  into the main work.
 
-[^1]:   These freedoms are adapted from
-        https://www.gnu.org/philosophy/free-sw.html
+If you want to know the details, read the [legal code][gfdl].
 
-[^2]:   Although, at this point, all we have is an unfinished book. So,
-        actually, "book" only refers to a book.
+[gfdl]: http://www.gnu.org/licenses/fdl.html
 
-[2]: http://opensource.org/osd
-[3]: https://youtu.be/aNAtbYSxzuA?t=12m30s
+The content of this site is licensed under the
+[Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/legalcode).
