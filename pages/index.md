@@ -4,7 +4,7 @@ This is a --
 
 ### I don't care about all of that, I just want to read the book.
 
-Okay, here: http://nightly.learnyou.org/lysa
+Okay, here: <http://nightly.learnyou.org/lysa>
 
 -- math book. We aim to take a logically rigorous, yet informal
 approach to math.
