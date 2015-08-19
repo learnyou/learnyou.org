@@ -49,6 +49,10 @@ main = hakyll $ do
     route idRoute
     compile copyFileCompiler
 
+  match "raw/*" $ do
+    route idRoute
+    compile copyFileCompiler
+
   match "pages/*" $ do
     route $ 
       composeRoutes (gsubRoute "pages/" (const "")) 
