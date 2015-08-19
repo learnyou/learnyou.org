@@ -33,7 +33,7 @@ channel, or in the issue tracker.
 ## Contributing
 
 Contributions are welcome and needed. Please see the
-[contributing guide](https://github.com/learnyou/lysa/blob/master/en/CONTRIBUTING.md)
+[contributing guide](https://github.com/learnyou/lysa/blob/master/en/README.md#contributing)
 first.
 
 (I'm sorry, I know how much of a pain they are).
