@@ -1,6 +1,6 @@
 #!/bin/sh
 
-./main.hs rebuild
+stack exec -- website rebuild
 cd prod
 git ls-files | xargs git rm
 cp -rv ../_site/* .
